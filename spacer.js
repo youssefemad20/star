@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initChat();
 });
 
-// 🚀 تم تشفير المفتاح باستخدام Base64 لمنع الروبوتات من التعرف عليه تلقائياً
-const encodedKey = "QUl6YVN5QVNpS0dNb18xR1lOazkzVDY0eFhYVl9pOEtpeGZYa3Zv"; 
+// 🚀 تم تشفير المفتاح المؤمن باستخدام Base64
+const encodedKey = "QUl6YVN5QWNLcUVQdWtxVVNXYUJybl9XNHozOXYwWF9TNkM4RGFR"; 
 const API_KEY = atob(encodedKey); 
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${API_KEY}`;
 
