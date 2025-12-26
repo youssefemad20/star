@@ -34,10 +34,11 @@ async function sendMessage() {
 
     // List of models to try in order of preference (December 2025 status)
     const modelsToTry = [
-        "gemini-2.0-flash-lite", // New lightweight stable
-        "gemini-2.0-flash",      // New stable
-        "gemini-1.5-flash",      // Legacy stable
-        "gemini-pro"             // Basic stable
+        "gemini-1.5-flash",
+        "gemini-1.5-flash-8b",
+        "gemini-1.5-pro",
+        "gemini-2.0-flash-exp",
+        "gemini-pro"
     ];
 
     let lastError = null;
