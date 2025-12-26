@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupiter - Cubs in Space</title>
+    <link rel="stylesheet" href="planet-style.css">
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img src="../Img/star-logo-withbg-removebg-preview.png" alt="Our Logo">
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="../index.html" data-i18n="nav-home">Home</a>
+                <a href="../index.html#Planets" data-i18n="nav-planets">Planets</a>
+            </nav>
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1 class="hero-title" data-i18n="jupiter-name">Jupiter</h1>
+            <h2 class="hero-subtitle" data-i18n="planet-hero-subtitle-jupiter">The King of Planets</h2>
+            <p class="hero-desc" data-i18n="planet-hero-desc-jupiter">
+                Jupiter is huge! It is the largest planet in our solar system—so big that more than 1,300 Earths could fit inside it! It's a "Gas Giant," which means it has no solid ground to stand on. It's just a giant ball of swirling clouds and storms. Jupiter has a long history of surprising scientists—all the way back to 1610 when Galileo Galilei found the first moons beyond Earth. That discovery changed the way we see the universe.
+            </p>
+        </section>
+
+        <section class="data-grid">
+            <div class="data-card">
+                <span class="data-icon">🏋️</span>
+                <span class="data-label" data-i18n="data-mass">Mass</span>
+                <span class="data-value">318 x Earth</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">🌪️</span>
+                <span class="data-label" data-i18n="data-storm">Famous Storm</span>
+                <span class="data-value" data-i18n="storm-jupiter">Great Red Spot</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">🌑</span>
+                <span class="data-label" data-i18n="data-moons">Moons</span>
+                <span class="data-value">95+</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">⚡</span>
+                <span class="data-label" data-i18n="data-day">Day Length</span>
+                <span class="data-value" data-i18n="day-jupiter">Only 10 Hours!</span>
+            </div>
+        </section>
+
+        <section class="deep-dive-section">
+            <span class="section-label" data-i18n="scientific-deep-dive">Scientific Deep Dive</span>
+            <div class="info-section">
+                <div class="info-block">
+                    <h2 data-i18n="info-jupiter-storm-title">The Great Red Spot</h2>
+                    <p data-i18n="info-jupiter-storm-desc">
+                        Jupiter has a giant storm called the "Great Red Spot" that has been raging for hundreds of years. This storm is so massive that the entire Earth could fit inside it! The winds there blow faster than any hurricane on Earth.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-jupiter-moons-title">A Mini Solar System?</h2>
+                    <p data-i18n="info-jupiter-moons-desc">
+                        Jupiter has so many moons (over 90!) that it's like its own mini solar system. The four biggest ones are called Galilean moons: Io (full of volcanoes), Europa (an ice world with an ocean underneath), Ganymede (the biggest moon ever), and Callisto.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-jupiter-vacuum-title">Vacuum Cleaner of Space</h2>
+                    <p data-i18n="info-jupiter-vacuum-desc">
+                        Because Jupiter is so massive, it has super strong gravity. This gravity helps protect Earth by pulling in or deflecting dangerous asteroids and comets that might otherwise hit us. Thanks, giant neighbor!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="challenges-section">
+            <span class="section-label" data-i18n="challenges-title">The Cosmic Challenges</span>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <span class="card-icon">⚡</span>
+                    <h3 data-i18n="challenges-title">Challenges</h3>
+                    <p data-i18n="jupiter-challenges">No solid surface to land on and extreme atmospheric pressure. Intense radiation belts could fry electronic equipment in seconds.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="card-icon">🛰️</span>
+                    <h3 data-i18n="solutions-title">Future Solutions</h3>
+                    <p data-i18n="jupiter-solutions">Sending radiation-hardened robotic probes and exploring the moons instead of the planet itself. Europa is a top candidate for finding extraterrestrial life.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 style="font-family: 'Audiowide'; color: var(--title-color); font-size: 40px; margin-bottom: 30px;" data-i18n="gallery-title-jupiter">Jupiter Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                     <!-- User: Add Image 1 Here -->
+                    <img src="../Img/jupiter.png" alt="Jupiter Full View">
+                    <div class="gallery-caption" data-i18n="caption-jupiter-1">The gas giant and its stripes</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 2 Here -->
+                    <img src="../Img/jupiter1.jpeg" alt="Great Red Spot">
+                    <div class="gallery-caption" data-i18n="caption-jupiter-2">The Great Red Spot storm</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 3 Here -->
+                    <img src="../Img/jupiter2.jpeg" alt="Jupiter Moons">
+                    <div class="gallery-caption" data-i18n="caption-jupiter-3">Jupiter's Galilean Moons</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-btn-container">
+            <button data-i18n-btn="back-to-solar"><a href="../index.html">Back to Solar System</a></button>
+        </div>
+    </main>
+
+    <footer data-i18n="footer-text">
+        &copy; 2025 Cubs in Space. Explore the Universe!
+    </footer>
+    <script src="../translations.js"></script>
+    <script src="../i18n.js"></script>
+</body>
+</html>

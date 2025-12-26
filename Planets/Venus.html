@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venus - Cubs in Space</title>
+    <link rel="stylesheet" href="planet-style.css">
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img src="../Img/star-logo-withbg-removebg-preview.png" alt="Our Logo">
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="../index.html" data-i18n="nav-home">Home</a>
+                <a href="../index.html#Planets" data-i18n="nav-planets">Planets</a>
+            </nav>
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1 class="hero-title" data-i18n="venus-name">Venus</h1>
+            <h2 class="hero-subtitle" data-i18n="planet-hero-subtitle-venus">Earth's Toxic Twin</h2>
+            <p class="hero-desc" data-i18n="planet-hero-desc-venus">
+                Venus is the second planet from the Sun and the hottest planet in our solar system! Even though it's called Earth's "twin" because they are the same size, you wouldn't want to visit. It's covered in thick, yellowish clouds that trap heat like a giant blanket, making it hotter than a pizza oven! Venus is the second planet from the Sun and Earth's closest planetary neighbor. Even though Mercury is closer to the Sun, Venus is the hottest planet in our solar system because of its thick, toxic atmosphere that traps heat in a runaway greenhouse effect.
+            </p>
+        </section>
+
+        <section class="data-grid">
+            <div class="data-card">
+                <span class="data-icon">🔥</span>
+                <span class="data-label" data-i18n="data-temp">Surface Temp</span>
+                <span class="data-value">465°C</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">🌪️</span>
+                <span class="data-label" data-i18n="data-atmos">Atmosphere</span>
+                <span class="data-value" data-i18n="atmos-venus">Toxic CO2</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">🔄</span>
+                <span class="data-label" data-i18n="data-rotation">Rotation</span>
+                <span class="data-value" data-i18n="rotation-venus">Backwards!</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">⭐</span>
+                <span class="data-label" data-i18n="data-appear">Appearance</span>
+                <span class="data-value" data-i18n="appear-venus">Brightest Planet</span>
+            </div>
+        </section>
+
+        <section class="deep-dive-section">
+            <span class="section-label" data-i18n="scientific-deep-dive">Scientific Deep Dive</span>
+            <div class="info-section">
+                <div class="info-block">
+                    <h2 data-i18n="info-venus-hot-title">Why is it so hot?</h2>
+                    <p data-i18n="info-venus-hot-desc">
+                        Venus has a super thick atmosphere made mostly of carbon dioxide. This creates a "Greenhouse Effect" gone wild! It lets the Sun's heat in but won't let it escape. That's why Venus is even hotter than Mercury, even though Mercury is closer to the Sun.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-venus-back-title">The Backward Planet</h2>
+                    <p data-i18n="info-venus-back-desc">
+                        Venus is a rebel! Most planets spin the same way (counter-clockwise), but Venus spins backward (clockwise). On Venus, the Sun rises in the west and sets in the east. It also spins super slowly.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-venus-star-title">The Morning Star</h2>
+                    <p data-i18n="info-venus-star-desc">
+                        Because Venus' thick clouds reflect sunlight like a mirror, it looks super bright in our sky. Often, it's the first "star" you see after sunset or the last one before sunrise. That's why people call it the "Morning Star" or "Evening Star".
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="challenges-section">
+            <span class="section-label" data-i18n="challenges-title">The Cosmic Challenges</span>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <span class="card-icon">🏗️</span>
+                    <h3 data-i18n="challenges-title">Challenges</h3>
+                    <p data-i18n="venus-challenges">Crushing atmospheric pressure (90x Earth's) and lead-melting temperatures. The clouds are made of corrosive sulfuric acid.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="card-icon">☁️</span>
+                    <h3 data-i18n="solutions-title">Future Solutions</h3>
+                    <p data-i18n="venus-solutions">Floating cities in the upper atmosphere where pressure and temperature are similar to Earth's. Using acid-resistant materials like specialized ceramics and metals.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 style="font-family: 'Audiowide'; color: var(--title-color); font-size: 40px; margin-bottom: 30px;" data-i18n="gallery-title-venus">Venus Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                     <!-- User: Add Image 1 Here -->
+                    <img src="../Img/venus.png" alt="Venus Full View">
+                    <div class="gallery-caption" data-i18n="caption-venus-1">Venus covered in clouds</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 2 Here -->
+                    <img src="../Img/venus1.jpeg" alt="Venus Surface Radar">
+                    <div class="gallery-caption" data-i18n="caption-venus-2">Radar image of the surface beneath clouds</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 3 Here -->
+                    <img src="../Img/venus2.jpeg" alt="Venus Volcano">
+                    <div class="gallery-caption" data-i18n="caption-venus-3">Venus has thousands of volcanoes</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-btn-container">
+            <button data-i18n-btn="back-to-solar"><a href="../index.html">Back to Solar System</a></button>
+        </div>
+    </main>
+
+    <footer data-i18n="footer-text">
+        &copy; 2025 Cubs in Space. Explore the Universe!
+    </footer>
+    <script src="../translations.js"></script>
+    <script src="../i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotic Space Tech | Cubs in Space</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="technology.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="img-logo">
+            <a href="index.html"><img src="Img/star-logo-withbg-removebg-preview.png" alt="Our Logo"></a>
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="index.html#home" data-i18n="nav-home">Home</a>
+                <a href="index.html#Earth" data-i18n="nav-earth">Earth</a>
+                <a href="index.html#Planets" data-i18n="nav-planets">Planets</a>
+                <a href="Technology.html" class="active" data-i18n="nav-tech">Technology</a>
+                <a href="forum.html" data-i18n="nav-forum">Forum</a>
+                <a href="Spacer.html" data-i18n="nav-spacer">Spacer</a>            
+            </nav>
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="tech-main">
+        <!-- Hero Section -->
+        <section class="tech-hero">
+            <div class="tech-hero-content">
+                <h1 data-i18n="tech-hero-title">Robotic Technology Used in Space</h1>
+                <p data-i18n="tech-hero-desc">Space probes, rovers, and robotic assistants are humanity's eyes and hands in the cosmos. Discover how these machines explore where humans cannot go.</p>
+            </div>
+        </section>
+
+        <!-- 1. Space Probes -->
+        <section class="tech-section" id="probes">
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fas fa-satellite"></i></div>
+                <h2 data-i18n="tech-1-title">Space Probes</h2>
+                <h3 data-i18n="tech-what-is">What They Are</h3>
+                <p data-i18n="tech-1-desc">Space probes are fully robotic spacecraft sent beyond Earth orbit to explore deep space. They do not carry humans and usually never return.</p>
+                
+                <div class="tech-details-grid">
+                    <div class="detail-box">
+                        <h4 data-i18n="tech-functions">Main Functions</h4>
+                        <ul data-i18n="tech-1-functions">
+                            <li>Measure temperature, radiation, gravity, magnetic fields</li>
+                            <li>Take photos and spectrometry data</li>
+                            <li>Send scientific data back to Earth via radio waves</li>
+                        </ul>
+                    </div>
+                    <div class="detail-box">
+                        <h4 data-i18n="tech-technologies">Key Technologies</h4>
+                        <ul data-i18n="tech-1-techs">
+                            <li>Autonomous navigation (they correct their path themselves)</li>
+                            <li>Long-range communication antennas</li>
+                            <li>Radiation-hardened computers</li>
+                            <li>RTGs (nuclear power) for missions far from the Sun</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-examples">
+                    <strong data-i18n="tech-examples">Famous Examples:</strong>
+                    <span data-i18n="tech-1-examples">Voyager 1 & 2 (Interstellar), New Horizons (Pluto), Juno (Jupiter)</span>
+                </div>
+                
+                <div class="tech-reason">
+                    <p><strong data-i18n="tech-why-matter">Why They Matter:</strong> <span data-i18n="tech-1-reason">They are humanity’s eyes beyond the solar system. Humans cannot survive these distances or durations.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Rovers -->
+        <section class="tech-section reverse" id="rovers">
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fas fa-robot"></i></div>
+                <h2 data-i18n="tech-2-title">Rovers</h2>
+                <h3 data-i18n="tech-what-is">What They Are</h3>
+                <p data-i18n="tech-2-desc">Rovers are mobile robots that land on planets or moons and drive across the surface.</p>
+
+                <div class="tech-details-grid">
+                    <div class="detail-box">
+                        <h4 data-i18n="tech-capabilities">Core Capabilities</h4>
+                        <ul data-i18n="tech-2-capabilities">
+                            <li>Terrain navigation (rocks, slopes, dust)</li>
+                            <li>Soil drilling and sample collection</li>
+                            <li>Chemical analysis (searching for water or life)</li>
+                            <li>High-resolution imaging</li>
+                        </ul>
+                    </div>
+                    <div class="detail-box">
+                        <h4 data-i18n="tech-technologies">Technologies Used</h4>
+                        <ul data-i18n="tech-2-techs">
+                            <li>AI-based path planning</li>
+                            <li>Computer vision</li>
+                            <li>Robotic arms</li>
+                            <li>Autonomous hazard avoidance</li>
+                            <li>Delayed communication handling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-examples">
+                    <strong data-i18n="tech-examples">Famous Examples:</strong>
+                    <span data-i18n="tech-2-examples">Curiosity (Mars geology), Perseverance (Life detection), Spirit & Opportunity</span>
+                </div>
+
+                <div class="tech-reason">
+                    <p><strong data-i18n="tech-why-matter">Why They Matter:</strong> <span data-i18n="tech-2-reason">They act as robot scientists, doing years of research without human presence.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Landers -->
+        <section class="tech-section" id="landers">
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fas fa-thumbtack"></i></div>
+                <h2 data-i18n="tech-3-title">Landers</h2>
+                <h3 data-i18n="tech-what-is">What They Are</h3>
+                <p data-i18n="tech-3-desc">Landers are robots that touch down and stay in one place.</p>
+
+                <div class="tech-details-grid">
+                    <div class="detail-box">
+                        <h4 data-i18n="tech-purposes">Main Purposes</h4>
+                        <ul data-i18n="tech-3-purposes">
+                            <li>Seismic activity detection</li>
+                            <li>Atmospheric analysis</li>
+                            <li>Soil chemistry</li>
+                            <li>Temperature & pressure monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="detail-box">
+                        <h4 data-i18n="tech-challenges">Key Challenges</h4>
+                        <ul data-i18n="tech-3-challenges">
+                            <li>Precision landing</li>
+                            <li>Surviving extreme cold or heat</li>
+                            <li>Limited mobility</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-examples">
+                    <strong data-i18n="tech-examples">Famous Examples:</strong>
+                    <span data-i18n="tech-3-examples">InSight (Mars quakes), Viking Landers, Chang’e Moon landers</span>
+                </div>
+
+                <div class="tech-reason">
+                    <p><strong data-i18n="tech-why-matter">Why They Matter:</strong> <span data-i18n="tech-3-reason">They allow deep, focused experiments that require stability rather than movement.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Satellites -->
+        <section class="tech-section reverse" id="satellites">
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fas fa-globe-americas"></i></div>
+                <h2 data-i18n="tech-4-title">Satellites</h2>
+                <h3 data-i18n="tech-what-is">What They Are</h3>
+                <p data-i18n="tech-4-desc">Satellites are robotic systems in orbit around Earth or other planets.</p>
+
+                <div class="tech-details-grid">
+                    <div class="detail-box">
+                        <h4 data-i18n="tech-types">Types</h4>
+                        <ul data-i18n="tech-4-types">
+                            <li>Communication satellites (internet, TV, phones)</li>
+                            <li>Navigation satellites (GPS, Galileo)</li>
+                            <li>Weather satellites</li>
+                            <li>Scientific satellites (space telescopes)</li>
+                        </ul>
+                    </div>
+                    <div class="detail-box">
+                        <h4 data-i18n="tech-stack">Technology Stack</h4>
+                        <ul data-i18n="tech-4-stack">
+                            <li>Onboard computers</li>
+                            <li>Gyroscopes & reaction wheels (orientation)</li>
+                            <li>Solar panels</li>
+                            <li>Thrusters</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-examples">
+                    <strong data-i18n="tech-examples">Famous Examples:</strong>
+                    <span data-i18n="tech-4-examples">Hubble Telescope, James Webb Telescope, Starlink</span>
+                </div>
+
+                <div class="tech-reason">
+                    <p><strong data-i18n="tech-why-matter">Why They Matter:</strong> <span data-i18n="tech-4-reason">Modern civilization depends on them — navigation, communication, climate monitoring.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Robotic Arms -->
+        <section class="tech-section" id="arms">
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fas fa-hand-holding"></i></div>
+                <h2 data-i18n="tech-5-title">Robotic Arms & Station Robots</h2>
+                <h3 data-i18n="tech-what-is">What They Are</h3>
+                <p data-i18n="tech-5-desc">Robots designed to assist astronauts or operate independently in orbit.</p>
+
+                <div class="tech-details-grid">
+                    <div class="detail-box">
+                        <h4 data-i18n="tech-capabilities">Capabilities</h4>
+                        <ul data-i18n="tech-5-capabilities">
+                            <li>Capture spacecraft</li>
+                            <li>Repair satellites</li>
+                            <li>Move cargo</li>
+                            <li>Reduce astronaut spacewalk risk</li>
+                        </ul>
+                    </div>
+                    <div class="detail-box">
+                        <h4 data-i18n="tech-technologies">Technology Used</h4>
+                        <ul data-i18n="tech-5-techs">
+                            <li>Precision motors</li>
+                            <li>Force feedback systems</li>
+                            <li>Teleoperation + AI assistance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-examples">
+                    <strong data-i18n="tech-examples">Famous Examples:</strong>
+                    <span data-i18n="tech-5-examples">Canadarm2, Dextre, European Robotic Arm</span>
+                </div>
+
+                <div class="tech-reason">
+                    <p><strong data-i18n="tech-why-matter">Why They Matter:</strong> <span data-i18n="tech-5-reason">They make space operations safer, faster, and cheaper.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Technologies Summary -->
+        <section class="tech-core-section">
+            <h2 data-i18n="tech-core-title">Core Technologies Powering All Space Robots</h2>
+            <div class="core-grid">
+                <div class="core-card">
+                    <i class="fas fa-brain"></i>
+                    <h3 data-i18n="tech-core-ai">Artificial Intelligence</h3>
+                    <ul data-i18n="tech-core-ai-list">
+                        <li>Decision-making</li>
+                        <li>Pattern recognition</li>
+                        <li>Navigation</li>
+                        <li>Self-diagnosis</li>
+                    </ul>
+                </div>
+                <div class="core-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3 data-i18n="tech-core-power">Power Systems</h3>
+                    <ul data-i18n="tech-core-power-list">
+                        <li>Solar energy</li>
+                        <li>Nuclear (RTG)</li>
+                        <li>Battery storage</li>
+                    </ul>
+                </div>
+                <div class="core-card">
+                    <i class="fas fa-satellite-dish"></i>
+                    <h3 data-i18n="tech-core-comms">Communication</h3>
+                    <ul data-i18n="tech-core-comms-list">
+                        <li>Deep Space Network</li>
+                        <li>High-gain antennas</li>
+                        <li>Error-correcting signals</li>
+                    </ul>
+                </div>
+                <div class="core-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 data-i18n="tech-core-materials">Materials</h3>
+                    <ul data-i18n="tech-core-materials-list">
+                        <li>Radiation-resistant electronics</li>
+                        <li>Extreme-temperature alloys</li>
+                        <li>Lightweight composites</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Big Insight -->
+        <section class="tech-insight">
+            <div class="insight-content">
+                <h2 data-i18n="tech-insight-title">🌌 Big Insight</h2>
+                <p data-i18n="tech-insight-text">Robotic space technology is not a replacement for humans — it is a necessary precursor.</p>
+                <div class="insight-bullets">
+                    <p><i class="fas fa-check"></i> <span data-i18n="tech-insight-1">Humans follow robots.</span></p>
+                    <p><i class="fas fa-check"></i> <span data-i18n="tech-insight-2">Robots reduce risk.</span></p>
+                    <p><i class="fas fa-check"></i> <span data-i18n="tech-insight-3">Robots expand reach.</span></p>
+                </div>
+                <p class="insight-conclusion" data-i18n="tech-insight-conclusion">Without robots: No Mars missions, No deep-space exploration, No satellite infrastructure, No future colonization.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer data-i18n="footer-text">
+        &copy; 2025 Youssef Emad. All rights reserved.
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script> <!-- Reusing existing i18n logic -->
+</body>
+</html>

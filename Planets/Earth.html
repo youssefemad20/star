@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth - Cubs in Space</title>
+    <link rel="stylesheet" href="planet-style.css">
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img src="../Img/star-logo-withbg-removebg-preview.png" alt="Our Logo">
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="../index.html" data-i18n="nav-home">Home</a>
+                <a href="../index.html#Planets" data-i18n="nav-planets">Planets</a>
+            </nav>
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1 class="hero-title" data-i18n="earth-title">Earth</h1>
+            <h2 class="hero-subtitle" data-i18n="planet-hero-subtitle-earth">Our Beautiful Blue Home</h2>
+            <p class="hero-desc" data-i18n="planet-hero-desc-earth">
+                Welcome home! Earth is the third planet from the Sun and the only place in the entire universe where we know for sure that life exists. It's perfectly placed—not too hot, not too cold—just right for liquid water, which is the key to life! Earth is a complex system of interacting rock, water, air, and life. Its atmosphere is rich in nitrogen and oxygen, and its magnetic field protects us from harmful solar radiation.
+            </p>
+        </section>
+
+        <section class="data-grid">
+            <div class="data-card">
+                <span class="data-icon">🌍</span>
+                <span class="data-label" data-i18n="data-diameter">Diameter</span>
+                <span class="data-value">12,742 km</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">💧</span>
+                <span class="data-label" data-i18n="data-water">Water Cover</span>
+                <span class="data-value">71%</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">🌑</span>
+                <span class="data-label" data-i18n="data-moons">Moons</span>
+                <span class="data-value">1 (The Moon)</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">⏱️</span>
+                <span class="data-label" data-i18n="data-day">Day Length</span>
+                <span class="data-value">24 Hours</span>
+            </div>
+        </section>
+
+        <section class="deep-dive-section">
+            <span class="section-label" data-i18n="scientific-deep-dive">Scientific Deep Dive</span>
+            <div class="info-section">
+                <div class="info-block">
+                    <h2 data-i18n="info-goldilocks-title">The Goldilocks Planet</h2>
+                    <p data-i18n="info-goldilocks-desc">
+                        Scientists call Earth the "Goldilocks Planet" because everything is "just right". We have an atmosphere that is rich in oxygen for us to breathe and protects us from meteors. We have a magnetic field that acts like a shield against harmful space rays.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-dynamic-title">A Dynamic World</h2>
+                    <p data-i18n="info-dynamic-desc">
+                        Earth is alive in more ways than one! The ground beneath our feet is made of giant puzzle pieces called "tectonic plates" that are always moving very slowly. This movement creates mountains, volcanoes, and earthquakes over millions of years.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-blue-title">The Blue Marble</h2>
+                    <p data-i18n="info-blue-desc">
+                        From space, Earth looks like a glowing blue marble swirled with white clouds. That blue color comes from our oceans, which cover almost three-quarters of the planet. It's the most colorful and beautiful planet we know!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="challenges-section">
+            <span class="section-label" data-i18n="challenges-title">The Cosmic Challenges</span>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <span class="card-icon">⚠️</span>
+                    <h3 data-i18n="challenges-title">Challenges</h3>
+                    <p data-i18n="earth-challenges">Overpopulation, climate change, and depletion of natural resources. Maintaining the delicate balance of ecosystems while advancing technology is our greatest hurdle.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="card-icon">🚀</span>
+                    <h3 data-i18n="solutions-title">Future Solutions</h3>
+                    <p data-i18n="earth-solutions">Transitioning to renewable energy, sustainable agriculture, and space exploration to monitor environmental changes and potentially find secondary habitats.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 style="font-family: 'Audiowide'; color: var(--title-color); font-size: 40px; margin-bottom: 30px;" data-i18n="gallery-title-earth">Earth Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                     <!-- User: Add Image 1 Here -->
+                    <img src="../Img/earth.png" alt="Earth from Space">
+                    <div class="gallery-caption" data-i18n="info-blue-title">The Blue Marble</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 2 Here -->
+                    <img src="../Img/earth1.jpeg" alt="Nature on Earth">
+                    <div class="gallery-caption" data-i18n="info-dynamic-title">Diverse life: Forests and Oceans</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 3 Here -->
+                    <img src="../Img/earth2.jpeg" alt="Earth at Night">
+                    <div class="gallery-caption" data-i18n="info-blue-title">Earth's city lights at night</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-btn-container">
+            <button data-i18n-btn="back-to-solar"><a href="../index.html">Back to Solar System</a></button>
+        </div>
+    </main>
+
+    <footer data-i18n="footer-text">
+        &copy; 2025 Cubs in Space. Explore the Universe!
+    </footer>
+    <script src="../translations.js"></script>
+    <script src="../i18n.js"></script>
+</body>
+</html>

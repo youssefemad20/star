@@ -1,0 +1,127 @@
+/* ========== Famous Figures Section ========== */
+#famous-figures {
+    padding: 100px 50px;
+    background-color: #050510;
+    position: relative;
+    overflow: hidden;
+}
+
+.figures-subsection {
+  margin-bottom: 80px;
+}
+
+.figures-subtitle {
+  font-family: "Audiowide", sans-serif;
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.figures-subtitle::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--secondary-color);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.figures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.figure-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.figure-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: var(--secondary-color);
+}
+
+.figure-img-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(162, 155, 254, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease;
+}
+
+.figure-card:hover .figure-img-container {
+  border-color: var(--secondary-color);
+}
+
+.figure-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.figure-name {
+  font-family: "Audiowide", sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.figure-role {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.figure-info {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.figure-contribution {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.figure-fact {
+  background: rgba(162, 155, 254, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: #fff;
+  border: 1px solid rgba(162, 155, 254, 0.2);
+}
+
+@media (max-width: 768px) {
+  #famous-figures {
+    padding: 60px 20px;
+  }
+}

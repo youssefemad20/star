@@ -1,0 +1,238 @@
+/* Cosmos Mysteries Specific Styles */
+@import url('../style.css');
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Custom Mystery Glows */
+:root {
+    --mystery-glow: rgba(147, 51, 234, 0.3); /* Purple */
+    --mystery-secondary: #e879f9; /* Pinkish-purple */
+}
+
+header {
+    background: rgba(10, 25, 41, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* Hero Section Refinement */
+.hero-section {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 150px 20px 80px;
+    background: radial-gradient(circle at center, var(--mystery-glow) 0%, transparent 75%);
+    position: relative;
+}
+
+.hero-title {
+    font-size: clamp(60px, 12vw, 140px);
+    font-family: "Audiowide", sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--mystery-secondary);
+    text-shadow: 0 0 40px var(--mystery-glow);
+    margin-bottom: 25px;
+}
+
+.hero-subtitle {
+    font-size: clamp(24px, 4vw, 42px);
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 35px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-desc {
+    font-size: 22px;
+    max-width: 900px;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Data Grid Layout Fix */
+.data-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.data-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background: rgba(10, 25, 41, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(232, 121, 249, 0.2);
+    border-radius: 25px;
+    padding: 35px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.data-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    border-color: var(--mystery-secondary);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--mystery-glow);
+}
+
+.data-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.data-label {
+    display: block;
+    font-size: 14px;
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.data-value {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--title-color);
+    font-family: "Space Grotesk", sans-serif;
+}
+
+/* Info Section (Historical/Discovery) */
+.deep-dive-section {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, transparent, rgba(147, 51, 234, 0.03), transparent);
+}
+
+.section-label {
+    text-align: center;
+    font-size: 15px;
+    color: var(--mystery-secondary);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.info-section {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.info-block {
+    margin-bottom: 50px;
+    background: rgba(10, 25, 41, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 50px;
+    border-radius: 40px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.info-block::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 6px;
+    height: 40px;
+    background: var(--mystery-secondary);
+    border-radius: 0 3px 3px 0;
+}
+
+.info-block h2 {
+    font-family: "Audiowide", sans-serif;
+    color: var(--title-color);
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.info-block p {
+    font-size: 19px;
+    line-height: 1.9;
+    color: var(--text-color);
+}
+
+/* Challenges/Solutions Grid */
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.challenge-card, .solution-card {
+    padding: 45px;
+    border-radius: 30px;
+    background: rgba(10, 25, 41, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.challenge-card { border-top: 4px solid #f87171; }
+.solution-card { border-top: 4px solid #4ade80; }
+
+.challenge-card:hover, .solution-card:hover {
+    transform: scale(1.03);
+    background: rgba(100, 181, 246, 0.05);
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
+    margin: 50px auto;
+}
+
+.gallery-item {
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    transition: all 0.5s ease;
+    height: 350px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.15);
+}
+.back-btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .hero-title { font-size: 50px; }
+    .hero-section { padding-top: 120px; }
+    .info-block { padding: 30px; }
+}

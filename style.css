@@ -1,0 +1,1045 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  /* Softer Space-themed Color Palette */
+  --primary-color: #64b5f6; /* Soft blue */
+  --secondary-color: #4fc3f7; /* Light cyan */
+  --accent-color: #81c784; /* Soft green */
+  --bg-color: #0a1929; /* Deep space blue */
+  --bg-secondary: #132f4c; /* Lighter space blue */
+  --title-color: #e3f2fd; /* Soft white-blue */
+  --text-color: #b0bec5; /* Muted gray-blue */
+  --glow-color: rgba(100, 181, 246, 0.3); /* Soft blue glow */
+}
+a {
+  text-decoration: none;
+  color: var(--title-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
+}
+p {
+  color: var(--text-color);
+}
+/* ========== Header Section ========== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: rgba(10, 25, 41, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(100, 181, 246, 0.1);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#language-switcher {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--title-color);
+  border: 1px solid rgba(100, 181, 246, 0.2);
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Space Grotesk", sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#language-switcher:hover {
+  background: rgba(100, 181, 246, 0.1);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 15px rgba(100, 181, 246, 0.2);
+}
+
+#language-switcher option {
+  background-color: var(--bg-secondary);
+  color: #fff;
+}
+
+header .img-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+header nav a {
+  margin: 0 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--title-color);
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+header nav a:hover {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(100, 181, 246, 0.6);
+  transform: translateY(-2px);
+}
+/* Removed redundant header styling */
+
+#home {
+  padding: 70px;
+  background-image: url("Img/Home_bg.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-size: auto;
+  background-position: center;
+  z-index: 1;
+}
+#home {
+  margin-top: 0;
+  padding-bottom: 150px;
+}
+.Home-message {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.Home-message h1 {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--title-color);
+  font-size: 100px;
+  font-weight: bold;
+  font-family: "Audiowide", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 100px;
+}
+.Home-message p {
+  text-align: center;
+  max-width: 800px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 40px;
+}
+/* Enhanced Main Buttons */
+button,
+.earth-p button {
+  padding: 15px 40px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(100, 181, 246, 0.25);
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+button:hover,
+.earth-p button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(100, 181, 246, 0.4);
+  border-color: var(--secondary-color);
+}
+
+button a,
+.earth-p button a {
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#Earth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  background-color: var(--bg-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+.earth-p {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 70px;
+}
+.earth-p h1 {
+  font-size: 100px;
+  font-weight: bold;
+  margin-top: 100px;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--title-color);
+  font-family: "Audiowide", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.earth-p p {
+  font-size: 20px;
+  font-weight: bold;
+  max-width: 1000px;
+  margin-left: 50px;
+}
+.earth-p .earth-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.earth-img img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(100, 181, 246, 0.3));
+  transition: transform 0.5s ease;
+}
+
+.earth-img img:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+/* Button styles consolidated above */
+/* ========== Planets Section ========== */
+#Planets {
+  padding: 80px 40px;
+  background-color: var(--bg-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section Title */
+#Planets > h1 {
+  font-size: clamp(60px, 10vw, 120px);
+  font-weight: bold;
+  margin: 0 0 80px 0;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--title-color);
+  font-family: "Audiowide", sans-serif;
+  text-shadow: 0 0 20px rgba(46, 213, 115, 0.3);
+  text-align: center;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow: 0 0 15px var(--glow-color);
+  }
+  to {
+    text-shadow: 0 0 25px rgba(100, 181, 246, 0.5);
+  }
+}
+
+/* Planet Container */
+.planet-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Individual Planet Card */
+.planet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 30px 25px;
+
+  /* Glassmorphism Effect */
+  background: rgba(100, 181, 246, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* Border with Gradient */
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 25px;
+  position: relative;
+
+  /* Shadow */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+
+  /* Transition */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Gradient Border Effect */
+.planet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 25px;
+  padding: 3px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 50%,
+    var(--primary-color) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover Effects */
+.planet:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 15px 40px rgba(100, 181, 246, 0.25),
+    0 0 30px rgba(100, 181, 246, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.planet:hover::before {
+  opacity: 1;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 50%,
+    var(--primary-color) 100%
+  );
+}
+
+/* Planet Image Container */
+.planet .planet-img {
+  margin: 10px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Planet Image */
+.planet-img img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(100, 181, 246, 0.25);
+  box-shadow: 0 0 20px rgba(100, 181, 246, 0.3),
+    inset 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  animation: planetFloat 6s ease-in-out infinite;
+}
+
+@keyframes planetFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+.planet:hover .planet-img img {
+  transform: scale(1.08) rotate(8deg);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 35px rgba(100, 181, 246, 0.6),
+    0 0 60px rgba(100, 181, 246, 0.3), inset 0 0 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Planet Content */
+.planet-p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Planet Name */
+.planet-p h1 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: bold;
+  margin: 0;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--primary-color);
+  font-family: "Audiowide", sans-serif;
+  text-shadow: 0 0 12px var(--glow-color);
+  text-align: center;
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+}
+
+.planet:hover .planet-p h1 {
+  -webkit-text-stroke: 2px var(--primary-color);
+  text-shadow: 0 0 18px rgba(100, 181, 246, 0.5);
+  letter-spacing: 3px;
+}
+
+/* Planet Description */
+.planet-p p {
+  font-size: clamp(13px, 1.5vw, 16px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  margin: 0;
+  max-width: 100%;
+  transition: color 0.3s ease;
+}
+
+.planet:hover .planet-p p {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Planet Button */
+.planet-p button {
+  margin-top: 10px;
+  padding: 12px 30px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(100, 181, 246, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.planet-p button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.planet-p button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.planet-p button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(100, 181, 246, 0.4);
+  border-color: var(--secondary-color);
+}
+
+.planet-p button a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+#spacer {
+  padding: 70px;
+  background-color: var(--bg-color);
+  text-align: center;
+  color: var(--title-color);
+}
+#spacer h1 {
+  font-size: clamp(40px, 6vw, 70px);
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--primary-color);
+  font-family: "Audiowide", sans-serif;
+  text-shadow: 0 0 12px var(--glow-color);
+  text-align: center;
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+}
+#spacer h2 {
+  font-size: clamp(50px, 8vw, 90px);
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--secondary-color);
+  font-family: "Audiowide", sans-serif;
+  text-shadow: 0 0 15px rgba(79, 195, 247, 0.4);
+  text-align: center;
+  transition: all 0.3s ease;
+  letter-spacing: 3px;
+}
+#spacer a {
+  padding: 15px 40px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(100, 181, 246, 0.25);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-top: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+#spacer a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+#spacer a:hover::before {
+  width: 300px;
+  height: 300px;
+}
+#spacer a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(100, 181, 246, 0.4);
+  border-color: var(--secondary-color);
+}
+footer {
+  padding: 30px 20px;
+  text-align: center;
+  color: var(--text-color);
+  background: linear-gradient(
+    180deg,
+    var(--bg-color) 0%,
+    var(--bg-secondary) 100%
+  );
+  border-top: 1px solid rgba(100, 181, 246, 0.1);
+  font-size: 14px;
+}
+/* ========== Meteorites & Showers Section ========== */
+#meteorites {
+  padding: 100px 50px;
+  background-color: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+#meteorites > h1 {
+  font-size: clamp(50px, 8vw, 100px);
+  font-weight: bold;
+  margin-bottom: 60px;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--title-color);
+  font-family: "Audiowide", sans-serif;
+  text-align: center;
+  text-shadow: 0 0 20px var(--glow-color);
+}
+
+.meteor-category {
+  margin-bottom: 80px;
+}
+
+.meteor-category h2 {
+  font-family: "Audiowide", sans-serif;
+  font-size: 32px;
+  color: var(--primary-color);
+  margin-bottom: 40px;
+  border-left: 5px solid var(--primary-color);
+  padding-left: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.meteor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.meteor-card {
+  background: rgba(10, 25, 41, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(100, 181, 246, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.meteor-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(100, 181, 246, 0.2);
+}
+
+.meteor-img-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.meteor-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.meteor-card:hover .meteor-img-container img {
+  transform: scale(1.1);
+}
+
+.meteor-info {
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meteor-info h3 {
+  font-family: "Audiowide", sans-serif;
+  font-size: 22px;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+.meteor-info p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #meteorites {
+    padding: 60px 20px;
+  }
+  
+  .meteor-category h2 {
+    font-size: 24px;
+  }
+}
+
+/* ========== Spacer Chat Section ========== */
+#spacer-chat-section {
+  padding: 120px 20px 80px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+    circle at center,
+    #132f4c 0%,
+    var(--bg-color) 70%
+  );
+}
+
+.chat-wrapper {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.ai-badge {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.5em;
+  vertical-align: middle;
+  color: #fff;
+  box-shadow: 0 0 10px var(--glow-color);
+  margin-left: 10px;
+}
+
+.subtitle {
+  margin-bottom: 40px;
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.chat-container {
+  background: rgba(10, 25, 41, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(100, 181, 246, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Styling */
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-box::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+.chat-box::-webkit-scrollbar-thumb {
+  background: rgba(100, 181, 246, 0.3);
+  border-radius: 4px;
+}
+.chat-box::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 181, 246, 0.5);
+}
+
+.message {
+  max-width: 80%;
+  padding: 14px 20px;
+  border-radius: 18px;
+  font-size: 16px;
+  line-height: 1.6;
+  animation: messageEntry 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  word-wrap: break-word;
+  text-align: left;
+}
+
+@keyframes messageEntry {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.user-msg {
+  align-self: flex-end;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: #fff;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 15px rgba(100, 181, 246, 0.2);
+}
+
+.ai-msg {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--title-color);
+  border-bottom-left-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-area {
+  padding: 20px;
+  background: rgba(10, 25, 41, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: 2px solid rgba(100, 181, 246, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.input-area input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(100, 181, 246, 0.15);
+}
+
+.input-area button {
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  border-radius: 50%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-area button svg {
+  width: 24px;
+  height: 24px;
+  transform: translateX(-1px) translateY(1px); /* Optical adjustment */
+}
+
+.api-notice {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: monospace;
+}
+
+@media (max-width: 768px) {
+  .chat-container {
+    height: 70vh;
+  }
+
+  .message {
+    max-width: 90%;
+    font-size: 14px;
+  }
+}
+
+/* ========== Premium Section Styles ========== */
+.section-title-premium {
+  font-size: clamp(50px, 8vw, 110px);
+  font-weight: bold;
+  margin-bottom: 80px;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--secondary-color);
+  font-family: "Audiowide", sans-serif;
+  text-align: center;
+  text-shadow: 0 0 25px rgba(79, 195, 247, 0.3);
+  letter-spacing: 4px;
+}
+
+.btn-premium {
+  margin-top: 10px;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(100, 181, 246, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-premium:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(100, 181, 246, 0.4);
+  border-color: var(--secondary-color);
+}
+
+.btn-premium a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== Cosmic Mysteries Section ========== */
+#mysteries {
+  padding: 100px 50px;
+  background-color: var(--bg-color);
+  position: relative;
+  overflow: hidden;
+}
+
+#mysteries > h1 {
+  font-size: clamp(50px, 8vw, 110px);
+  font-weight: bold;
+  margin-bottom: 80px;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--secondary-color);
+  font-family: "Audiowide", sans-serif;
+  text-align: center;
+  text-shadow: 0 0 25px rgba(79, 195, 247, 0.3);
+}
+
+.mystery-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mystery-card {
+  flex: 1;
+  min-width: 320px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 25, 41, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(100, 181, 246, 0.15);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.mystery-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  background: rgba(100, 181, 246, 0.12);
+  border-color: var(--secondary-color);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(79, 195, 247, 0.3);
+}
+
+.mystery-img {
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.mystery-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.mystery-card:hover .mystery-img img {
+  transform: scale(1.1);
+}
+
+.mystery-p h1 {
+  font-family: "Audiowide", sans-serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--title-color);
+  text-shadow: 0 0 15px var(--glow-color);
+}
+
+.mystery-p p {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  #mysteries {
+    padding: 60px 20px;
+  }
+}

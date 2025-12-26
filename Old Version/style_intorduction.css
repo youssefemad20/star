@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+*{
+    font-family: "poppins",sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+header{
+    background-color: #f0f0f0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 200px;
+}
+.Logo_team{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: -12px;
+
+}
+.title_logo{
+    text-decoration: none;
+    color: #3a6cf4;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8em;
+}
+.links a{
+    color: #3a6cf4;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding-left: 30px;
+    transition: .7s ease;
+}
+.links a:hover{
+    color: rgb(40, 37, 37);
+    font-size: 1.9em;
+    transform: scale(1.1);
+}
+.main{
+    min-height: 100vh;
+    background: url(images/background_for_\ main.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px;
+
+}
+.main h1{
+    color: rgb(47, 79, 225);
+    margin: 16px;
+}
+.main p{
+    color: rgb(255 255 255);
+    max-width: 550px;
+    font-size: 20px;
+    margin-left: 16px;
+    
+}
+.one{
+    color:#FF4500  ;
+}
+.two{
+    color:#32CD32  ;
+}
+.three{
+    color: #1E90FF;
+}
+.four{
+    color:#9400D3 ;
+}
+.goals{
+    color: rgb(231 231 231);
+    font-size: 25px;
+    margin-left: 16px;
+    
+}

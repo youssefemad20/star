@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercury - Cubs in Space</title>
+    <link rel="stylesheet" href="planet-style.css">
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img src="../Img/star-logo-withbg-removebg-preview.png" alt="Our Logo">
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="../index.html" data-i18n="nav-home">Home</a>
+                <a href="../index.html#Planets" data-i18n="nav-planets">Planets</a>
+            </nav>
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1 class="hero-title" data-i18n="mercury-name">Mercury</h1>
+            <h2 class="hero-subtitle" data-i18n="planet-hero-subtitle-mercury">The Swift Little Planet</h2>
+            <p class="hero-desc" data-i18n="planet-hero-desc-mercury">
+                Meet Mercury, the smallest planet in our solar system and the closest neighbor to the Sun! It's super fast, zipping around the Sun faster than any other planet. Because it has almost no air (atmosphere) to hold onto heat, it has the wildest temperature swings—super hot by day and freezing cold at night! Mercury is a rocky planet with a heavily cratered surface, much like our Moon. It has a very thin atmosphere, or exosphere, and no moons of its own.
+            </p>
+        </section>
+
+        <section class="data-grid">
+            <div class="data-card">
+                <span class="data-icon">🌡️</span>
+                <span class="data-label" data-i18n="data-temp">Temp Range</span>
+                <span class="data-value">-180°C to 430°C</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">📅</span>
+                <span class="data-label" data-i18n="data-year">Year Length</span>
+                <span class="data-value">88 Earth Days</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">🌑</span>
+                <span class="data-label" data-i18n="data-moons">Moons</span>
+                <span class="data-value">0</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">🏃</span>
+                <span class="data-label" data-i18n="data-dist">Distance from Sun</span>
+                <span class="data-value">58 Million km</span>
+            </div>
+        </section>
+
+        <section class="deep-dive-section">
+            <span class="section-label" data-i18n="scientific-deep-dive">Scientific Deep Dive</span>
+            <div class="info-section">
+                <div class="info-block">
+                    <h2 data-i18n="info-mercury-look-title">What does it look like?</h2>
+                    <p data-i18n="info-mercury-look-desc">
+                        Mercury looks a lot like Earth's Moon. It's gray, rocky, and covered in thousands of craters (holes made by space rocks hitting it). Since it doesn't have wind or rain to smooth them out, these craters stay there forever!
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-mercury-year-title">A Day Longer than a Year?</h2>
+                    <p data-i18n="info-mercury-year-desc">
+                        This is super weird! Mercury spins very slowly but orbits the Sun very fast. It takes 59 Earth days to spin once (a day), but only 88 Earth days to go around the Sun (a year). If you lived there, you'd have a birthday every 3 months!
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-mercury-life-title">Can we live there?</h2>
+                    <p data-i18n="info-mercury-life-desc">
+                        Probably not! It has no air to breathe and gets blasted by the Sun's radiation. But scientists are super interested in it. We've sent robot probes like MESSENGER to map its surface and learn its secrets.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="challenges-section">
+            <span class="section-label" data-i18n="challenges-title">The Cosmic Challenges</span>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <span class="card-icon">🌋</span>
+                    <h3 data-i18n="challenges-title">Challenges</h3>
+                    <p data-i18n="mercury-challenges">Massive temperature swings (430°C to -180°C) and intense solar radiation. There is almost no atmosphere to breathe or protect from space rocks.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="card-icon">🏗️</span>
+                    <h3 data-i18n="solutions-title">Future Solutions</h3>
+                    <p data-i18n="mercury-solutions">Building habitats in permanently shadowed craters at the poles where ice exists, or building deep underground to use the planet's crush as a natural shield.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 style="font-family: 'Audiowide'; color: var(--title-color); font-size: 40px; margin-bottom: 30px;" data-i18n="gallery-title-mercury">Mercury Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                     <!-- User: Add Image 1 Here -->
+                    <img src="../Img/mercury.png" alt="Mercury Full View">
+                    <div class="gallery-caption" data-i18n="caption-mercury-1">Mercury's cratered surface</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 2 Here -->
+                    <img src="../Img/mercury1.jpg" alt="Mercury Surface">
+                    <div class="gallery-caption" data-i18n="caption-mercury-2">Close up of the rocky terrain</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 3 Here -->
+                    <img src="../Img/mercury2.jpg" alt="Mercury Transit">
+                    <div class="gallery-caption" data-i18n="caption-mercury-3">Mercury passing in front of the Sun</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-btn-container">
+            <button data-i18n-btn="back-to-solar"><a href="../index.html">Back to Solar System</a></button>
+        </div>
+    </main>
+
+    <footer data-i18n="footer-text">
+        &copy; 2025 Cubs in Space. Explore the Universe!
+    </footer>
+    <script src="../translations.js"></script>
+    <script src="../i18n.js"></script>
+</body>
+</html>

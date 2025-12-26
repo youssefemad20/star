@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neptune - Cubs in Space</title>
+    <link rel="stylesheet" href="planet-style.css">
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img src="../Img/star-logo-withbg-removebg-preview.png" alt="Our Logo">
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="../index.html" data-i18n="nav-home">Home</a>
+                <a href="../index.html#Planets" data-i18n="nav-planets">Planets</a>
+            </nav>
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1 class="hero-title" data-i18n="neptune-name">Neptune</h1>
+            <h2 class="hero-subtitle" data-i18n="planet-hero-subtitle-neptune">The Windy Planet</h2>
+            <p class="hero-desc" data-i18n="planet-hero-desc-neptune">
+                Neptune is the eighth and farthest planet from the Sun. It's a dark, cold, and stormy Ice Giant. It has the strongest winds in the entire solar system—sometimes they blow faster than the speed of sound! Dark, cold, and whipped by supersonic winds, ice giant Neptune is the eighth and most distant planet from our Sun. More than 30 times as far from the Sun as Earth, Neptune is the only planet in our solar system not visible to the naked eye.
+            </p>
+        </section>
+
+        <section class="data-grid">
+            <div class="data-card">
+                <span class="data-icon">🌬️</span>
+                <span class="data-label" data-i18n="data-wind">Wind Speed</span>
+                <span class="data-value">2,100 km/h</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">🥶</span>
+                <span class="data-label" data-i18n="data-temp">Temperature</span>
+                <span class="data-value">-214°C</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">📅</span>
+                <span class="data-label" data-i18n="data-year">Year Length</span>
+                <span class="data-value">165 Earth Years</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">🌑</span>
+                <span class="data-label" data-i18n="data-moons">Moons</span>
+                <span class="data-value">14</span>
+            </div>
+        </section>
+
+        <section class="deep-dive-section">
+            <span class="section-label" data-i18n="scientific-deep-dive">Scientific Deep Dive</span>
+            <div class="info-section">
+                <div class="info-block">
+                    <h2 data-i18n="info-neptune-far-title">So Far Away!</h2>
+                    <p data-i18n="info-neptune-far-desc">
+                        Neptune is so far from the Sun that "noon" on Neptune looks like twilight on Earth. It takes sunlight 4 hours to get there! Because it's so far out, one year on Neptune lasts 165 years on Earth.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-neptune-math-title">Math Discovered It!</h2>
+                    <p data-i18n="info-neptune-math-desc">
+                        Neptune is the only planet that was found using math before it was seen through a telescope. Scientists noticed Uranus was moving funny and calculated that another planet must be pulling on it. They pointed their telescope where the math said, and tada! There was Neptune.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-neptune-triton-title">Triton: The Backward Moon</h2>
+                    <p data-i18n="info-neptune-triton-desc">
+                        Neptune's biggest moon, Triton, orbits the planet backward! It's also super cold and shoots geysers of ice (nitrogen snow) miles high into space. It's one of the coolest (literally!) places in the solar system.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="challenges-section">
+            <span class="section-label" data-i18n="challenges-title">The Cosmic Challenges</span>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <span class="card-icon">🌪️</span>
+                    <h3 data-i18n="challenges-title">Challenges</h3>
+                    <p data-i18n="neptune-challenges">Supersonic winds and extreme distance from Earth (communications take 4 hours each way). The environment is incredibly cold and dark.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="card-icon">🚀</span>
+                    <h3 data-i18n="solutions-title">Future Solutions</h3>
+                    <p data-i18n="neptune-solutions">Autonomous AI-controlled probes that can make decisions without waiting for Earth's commands. Using laser-based communication to increase data transfer speeds over vast distances.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 style="font-family: 'Audiowide'; color: var(--title-color); font-size: 40px; margin-bottom: 30px;" data-i18n="gallery-title-neptune">Neptune Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                     <!-- User: Add Image 1 Here -->
+                    <img src="../Img/neptune.png" alt="Neptune Full View">
+                    <div class="gallery-caption" data-i18n="caption-neptune-1">The deep blue world</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 2 Here -->
+                    <img src="../Img/neptune1.jpeg" alt="Great Dark Spot">
+                    <div class="gallery-caption" data-i18n="caption-neptune-2">The Great Dark Spot storm</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 3 Here -->
+                    <img src="../Img/neptune2.jpeg" alt="Triton">
+                    <div class="gallery-caption" data-i18n="caption-neptune-3">Triton's icy surface</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-btn-container">
+            <button data-i18n-btn="back-to-solar"><a href="../index.html">Back to Solar System</a></button>
+        </div>
+    </main>
+
+    <footer data-i18n="footer-text">
+        &copy; 2025 Cubs in Space. Explore the Universe!
+    </footer>
+    <script src="../translations.js"></script>
+    <script src="../i18n.js"></script>
+</body>
+</html>

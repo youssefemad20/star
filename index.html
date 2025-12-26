@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubs in Space</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="figures.css">
+    <link rel="stylesheet" href="missions.css">
+    <link rel="stylesheet" href="galaxies.css">
+    <link rel="stylesheet" href="technology.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+     <header>
+        <div class="img-logo">
+            <img src="Img/star-logo-withbg-removebg-preview.png" alt="Our Logo">
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="#home" data-i18n="nav-home">Home</a>
+                <a href="#Earth" data-i18n="nav-earth">Earth</a>
+                <a href="#Planets" data-i18n="nav-planets">Planets</a>
+                <a href="#meteorites" data-i18n="nav-meteorites">Meteorites</a>
+                <a href="#mysteries" data-i18n="nav-mysteries">Cosmos</a>
+                <a href="Technology.html" data-i18n="nav-tech">Technology</a>
+                <a href="forum.html" data-i18n="nav-forum">Forum</a>
+                <a href="#famous-missions" data-i18n="nav-missions">Missions</a>
+                <a href="#famous-figures" data-i18n="nav-figures">Figures</a>
+                <a href="#galaxies" data-i18n="nav-galaxies">Galaxies</a>
+                <a href="gallery.html" data-i18n="nav-gallery">Gallery</a>
+                <a href="#spacer" data-i18n="nav-spacer">Spacer</a>            
+            </nav>
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+     </header>
+    <!-- Main -->
+     <main>
+        <section id="home">
+        <div class="Home-message">
+            <h1 data-i18n="home-title">Hello in the Star</h1>
+            <p data-i18n="home-desc">Space is not just distant stars — it is the beginning of everything.
+               Here, where galaxies stretch beyond limits and imagination meets science, we take you on a journey to explore the secrets of the universe, from the depths of deep space to the latest scientific discoveries.
+               Get ready to expand your horizons, because every star tells a story, and every galaxy holds a secret waiting to be discovered.</p>
+            <button data-i18n-btn="btn-discover"><a href="Spacer.html">Discover with Spacer</a></button>
+        </div>
+    </section>
+    <!-- Upcoming Cosmic Event Banner -->
+    <section id="upcoming-event-banner" class="hidden">
+        <div class="event-glass-card">
+            <div class="event-glow"></div>
+            <div class="event-content">
+                <div class="event-header">
+                    <span class="event-badge" data-i18n="event-badge">Upcoming Event</span>
+                    <h2 id="event-title">---</h2>
+                </div>
+                <div class="event-body">
+                    <div class="event-info">
+                        <p><i class="fas fa-calendar-alt"></i> <span id="event-date">---</span></p>
+                        <p><i class="fas fa-clock"></i> <span id="event-time">---</span></p>
+                    </div>
+                    <div class="event-explanation">
+                        <h3 data-i18n="event-scientific-title">Scientific Explanation</h3>
+                        <p id="event-desc">---</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home -->
+    <!-- Earth -->
+    <section id="Earth">
+        <div class="earth-p">
+            <h1 data-i18n="earth-title">Earth</h1>
+            <p data-i18n="earth-desc">Earth is the third planet from the Sun and the only known planet to support life. It is the only planet known to have plate tectonics, oceans, and a diverse range of life forms, including humans. Earth is also the only planet known to have a magnetic field, which helps protect it from harmful solar radiation.</p>
+            <button data-i18n-btn="btn-learn-more"><a href="Planets/Earth.html">Learn More</a></button>
+        </div>
+        <div class="earth-img">
+            <img src="Img/earth.png" alt="Earth">
+        </div>
+      </section>
+     <!-- Planets -->
+      <section id="Planets">
+        <h1 data-i18n="planets-title">Planets</h1>
+        <div class="planet-container">
+            <!-- Sun -->
+            <div class="planet">
+                <div class="planet-img"><img src="Img/sun.png" alt="Sun"></div>
+                <div class="planet-p">
+                    <h1 data-i18n="sun-name">Sun</h1>
+                    <p data-i18n="sun-desc">The Sun is the star at the center of our Solar System. It is a massive ball of hot plasma that provides light and heat to all the planets. The Sun contains 99.86% of the mass in the Solar System and is responsible for Earth's climate and weather through its powerful energy output.</p>
+                    <button data-i18n-btn="btn-learn-more"><a href="Planets/sun.html">Learn More</a></button>
+                </div>
+            </div>
+            <!-- Mercury -->
+            <div class="planet">
+                <div class="planet-img"><img src="Img/mercury.png" alt="Mercury"></div>
+                <div class="planet-p">
+                    <h1 data-i18n="mercury-name">Mercury</h1>
+                    <p data-i18n="mercury-desc">Mercury is the closest planet to the Sun and the smallest planet in our Solar System. It has extreme temperature variations, from scorching hot during the day to freezing cold at night. Mercury has no atmosphere to retain heat and is covered with craters from asteroid impacts.</p>
+                    <button data-i18n-btn="btn-learn-more"><a href="Planets/Mercury.html">Learn More</a></button>
+                </div>
+            </div>
+            <!-- Venus -->
+            <div class="planet">
+                <div class="planet-img"><img src="Img/venus.png" alt="Venus"></div>
+                <div class="planet-p">
+                    <h1 data-i18n="venus-name">Venus</h1>
+                    <p data-i18n="venus-desc">Venus is the second planet from the Sun and is often called Earth's twin due to similar size. However, Venus has a thick toxic atmosphere filled with carbon dioxide and sulfuric acid clouds, creating a runaway greenhouse effect that makes it the hottest planet in our Solar System.</p>
+                    <button data-i18n-btn="btn-learn-more"><a href="Planets/Venus.html">Learn More</a></button>
+                </div>
+            </div>
+            <!-- Earth -->
+            <div class="planet">
+                <div class="planet-img"><img src="Img/earth.png" alt="Earth"></div>
+                <div class="planet-p">
+                    <h1 data-i18n="earth-title">Earth</h1>
+                    <p data-i18n="earth-desc">Earth is the third planet from the Sun and the only known planet to support life. It has liquid water, a protective atmosphere, and a magnetic field that shields it from harmful solar radiation. Earth is home to millions of species and has diverse ecosystems.</p>
+                    <button data-i18n-btn="btn-learn-more"><a href="Planets/Earth.html">Learn More</a></button>
+                </div>
+            </div>
+            <!-- Mars -->
+            <div class="planet">
+                <div class="planet-img"><img src="Img/mars.png" alt="Mars"></div>
+                <div class="planet-p">
+                    <h1 data-i18n="mars-name">Mars</h1>
+                    <p data-i18n="mars-desc">Mars is the fourth planet from the Sun, known as the Red Planet due to iron oxide on its surface. It has the largest volcano and canyon in the Solar System. Mars has polar ice caps and evidence suggests it once had liquid water, making it a prime target for the search for past life.</p>
+                    <button data-i18n-btn="btn-learn-more"><a href="Planets/Mars.html">Learn More</a></button>
+                </div>
+            </div>
+            <!-- Jupiter -->
+            <div class="planet">
+                <div class="planet-img"><img src="Img/jupiter.png" alt="Jupiter"></div>
+                <div class="planet-p">
+                    <h1 data-i18n="jupiter-name">Jupiter</h1>
+                    <p data-i18n="jupiter-desc">Jupiter is the fifth and largest planet in our Solar System, a gas giant with colorful cloud bands and the famous Great Red Spot storm. It has at least 79 moons, including the four large Galilean moons. Jupiter's massive gravity helps protect Earth from asteroids and comets.</p>
+                    <button data-i18n-btn="btn-learn-more"><a href="Planets/Jupiter.html">Learn More</a></button>
+                </div>
+            </div>
+            <!-- Saturn -->
+            <div class="planet">
+                <div class="planet-img"><img src="Img/saturn.png" alt="Saturn"></div>
+                <div class="planet-p">
+                    <h1 data-i18n="saturn-name">Saturn</h1>
+                    <p data-i18n="saturn-desc">Saturn is the sixth planet from the Sun and is famous for its spectacular ring system made of ice and rock particles. It is a gas giant with a low density that would allow it to float in water. Saturn has over 80 known moons, with Titan being the largest.</p>
+                    <button data-i18n-btn="btn-learn-more"><a href="Planets/Saturn.html">Learn More</a></button>
+                </div>
+            </div>
+            <!-- Uranus -->
+            <div class="planet">
+                <div class="planet-img"><img src="Img/uranus.png" alt="Uranus"></div>
+                <div class="planet-p">
+                    <h1 data-i18n="uranus-name">Uranus</h1>
+                    <p data-i18n="uranus-desc">Uranus is the seventh planet from the Sun and is unique for rotating on its side, likely due to a massive collision in its past. This ice giant has a blue-green color from methane in its atmosphere and has 27 known moons. Uranus experiences extreme seasons lasting over 20 years each.</p>
+                    <button data-i18n-btn="btn-learn-more"><a href="Planets/Uranus.html">Learn More</a></button>
+                </div>
+            </div>
+            <!-- Neptune -->
+            <div class="planet">
+                <div class="planet-img"><img src="Img/neptune.png" alt="Neptune"></div>
+                <div class="planet-p">
+                    <h1 data-i18n="neptune-name">Neptune</h1>
+                    <p data-i18n="neptune-desc">Neptune is the eighth and farthest planet from the Sun in our Solar System. This ice giant has the strongest winds in the Solar System, reaching speeds of over 2,000 km/h. Neptune has a deep blue color and 14 known moons, with Triton being the largest and most unusual.</p>
+                    <button data-i18n-btn="btn-learn-more"><a href="Planets/Neptune.html">Learn More</a></button>
+                </div>
+            </div>
+            <!-- Pluto -->
+            <div class="planet">
+                <div class="planet-img"><img src="Img/Pluto.png" alt="Pluto"></div>
+                <div class="planet-p">
+                    <h1 data-i18n="pluto-name">Pluto</h1>
+                    <p data-i18n="pluto-desc">Pluto is a dwarf planet in the Kuiper Belt beyond Neptune's orbit. Once considered the ninth planet, it was reclassified in 2006. Pluto has a heart-shaped glacier, five known moons, and a thin atmosphere. NASA's New Horizons mission revealed its surprisingly complex and active surface.</p>
+                    <button data-i18n-btn="btn-learn-more"><a href="Planets/Pluto.html">Learn More</a></button>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Meteorites & Showers Section -->
+      <section id="meteorites">
+        <h1 data-i18n="meteorites-section-title">Meteorites & Meteor Showers</h1>
+        
+        <div class="meteor-category">
+            <h2 data-i18n="category-meteorites">Famous Meteorites</h2>
+            <div class="meteor-grid">
+                <div class="meteor-card">
+                    <div class="meteor-img-container">
+                        <img src="Img/Hoba Meteorite.jpeg" alt="Hoba Meteorite">
+                    </div>
+                    <div class="meteor-info">
+                        <h3 data-i18n="hoba-name">Hoba Meteorite</h3>
+                        <p data-i18n="hoba-desc">Located in Namibia, it's the largest intact meteorite ever found on Earth. It weighs about 60 tons and is composed almost entirely of iron.</p>
+                    </div>
+                </div>
+                <div class="meteor-card">
+                    <div class="meteor-img-container">
+                        <img src="Img/Chelyabinsk Meteor.jpeg" alt="Chelyabinsk Meteor">
+                    </div>
+                    <div class="meteor-info">
+                        <h3 data-i18n="chelyabinsk-name">Chelyabinsk Meteor</h3>
+                        <p data-i18n="chelyabinsk-desc">Exploded over Russia in 2013. It's famous for being widely caught on dashboard cameras. The blast broke thousands of windows and injured hundreds.</p>
+                    </div>
+                </div>
+                <div class="meteor-card">
+                    <div class="meteor-img-container">
+                        <img src="Img/Allende Meteorite.jpeg" alt="Allende Meteorite">
+                    </div>
+                    <div class="meteor-info">
+                        <h3 data-i18n="allende-name">Allende Meteorite</h3>
+                        <p data-i18n="allende-desc">Fell in Mexico in 1969. Scientists call it the 'Rosetta Stone' of astronomy because it contains minerals from the very birth of the solar system.</p>
+                    </div>
+                </div>
+                <div class="meteor-card">
+                    <div class="meteor-img-container">
+                        <img src="Img/Willamette Meteorite.jpeg" alt="Willamette Meteorite">
+                    </div>
+                    <div class="meteor-info">
+                        <h3 data-i18n="willamette-name">Willamette Meteorite</h3>
+                        <p data-i18n="willamette-desc">The largest meteorite discovered in the USA. It's known for its unique, deeply pitted surface caused by thousands of years of erosion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="meteor-category">
+            <h2 data-i18n="category-showers">Annual Meteor Showers</h2>
+            <div class="meteor-grid">
+                <div class="meteor-card">
+                    <div class="meteor-img-container">
+                        <img src="Img/Perseids.jpeg" alt="Perseids">
+                    </div>
+                    <div class="meteor-info">
+                        <h3 data-i18n="perseids-name">Perseids</h3>
+                        <p data-i18n="perseids-desc">Peak in mid-August. They are the most popular shower because they produce bright meteors in clear, warm summer skies.</p>
+                    </div>
+                </div>
+                <div class="meteor-card">
+                    <div class="meteor-img-container">
+                        <img src="Img/Leonids.jpeg" alt="Leonids">
+                    </div>
+                    <div class="meteor-info">
+                        <h3 data-i18n="leonids-name">Leonids</h3>
+                        <p data-i18n="leonids-desc">Peak in November. They are famous for producing spectacular 'meteor storms' about every 33 years where thousands of meteors fall.</p>
+                    </div>
+                </div>
+                <div class="meteor-card">
+                    <div class="meteor-img-container">
+                        <img src="Img/Geminids.jpeg" alt="Geminids">
+                    </div>
+                    <div class="meteor-info">
+                        <h3 data-i18n="geminids-name">Geminids</h3>
+                        <p data-i18n="geminids-desc">Peak in December. One of the strongest showers, showing over 120 multicolored meteors per hour under ideal dark conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="meteor-category">
+            <h2 data-i18n="category-craters">Incredible Craters</h2>
+            <div class="meteor-grid">
+                <div class="meteor-card">
+                    <div class="meteor-img-container">
+                        <img src="Img/Barringer Crater.jpeg" alt="Barringer Crater">
+                    </div>
+                    <div class="meteor-info">
+                        <h3 data-i18n="barringer-name">Barringer Crater</h3>
+                        <p data-i18n="barringer-desc">Located in Arizona, USA. It is the best-preserved meteorite crater on Earth, created by an impact about 50,000 years ago.</p>
+                    </div>
+                </div>
+                <div class="meteor-card">
+                    <div class="meteor-img-container">
+                        <img src="Img/Chicxulub Crater.jpeg" alt="Chicxulub Crater">
+                    </div>
+                    <div class="meteor-info">
+                        <h3 data-i18n="chicxulub-name">Chicxulub Crater</h3>
+                        <p data-i18n="chicxulub-desc">Located in Mexico. This giant crater marks the impact site of the asteroid that caused the extinction of the dinosaurs 66 million years ago.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Famous Galaxies Section -->
+      <section id="galaxies">
+        <h1 data-i18n="galaxies-section-title" class="section-title-premium">Famous Galaxies</h1>
+        <div class="mystery-container">
+            <!-- Milky Way -->
+            <div class="mystery-card">
+                <div class="mystery-img"><img src="Img/The Milky Way.jpeg" alt="Milky Way" style="object-fit:cover;"></div>
+                <div class="mystery-p">
+                    <h1 data-i18n="mw-title">The Milky Way</h1>
+                    <p data-i18n="card-mw-desc">Our home galaxy, containing the Sun and Earth.</p>
+                    <button class="btn-premium" data-i18n-btn="btn-explore-galaxy"><a href="milky-way.html">Explore Galaxy</a></button>
+                </div>
+            </div>
+            <!-- Andromeda -->
+            <div class="mystery-card">
+                <div class="mystery-img"><img src="Img/Andromeda Galaxy (M31).jpeg" alt="Andromeda" style="object-fit:cover;"></div>
+                <div class="mystery-p">
+                    <h1 data-i18n="and-title">Andromeda</h1>
+                    <p data-i18n="card-and-desc">Our massive cosmic neighbor on a collision course.</p>
+                    <button class="btn-premium" data-i18n-btn="btn-explore-galaxy"><a href="andromeda.html">Explore Galaxy</a></button>
+                </div>
+            </div>
+            <!-- Whirlpool -->
+            <div class="mystery-card">
+                <div class="mystery-img"><img src="Img/Whirlpool Galaxy (M51).jpeg" alt="Whirlpool" style="object-fit:cover;"></div>
+                <div class="mystery-p">
+                    <h1 data-i18n="whirl-title">Whirlpool</h1>
+                    <p data-i18n="card-whirl-desc">The perfect grand-design spiral galaxy.</p>
+                    <button class="btn-premium" data-i18n-btn="btn-explore-galaxy"><a href="whirlpool.html">Explore Galaxy</a></button>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Cosmic Mysteries Section -->
+      <section id="mysteries">
+        <h1 data-i18n="mysteries-section-title" class="section-title-premium">Cosmic Mysteries</h1>
+        <div class="mystery-container">
+            <!-- Black Hole -->
+            <div class="mystery-card">
+                <div class="mystery-img"><img src="Img/BlackHole_premium.png" alt="Black Hole"></div>
+                <div class="mystery-p">
+                    <h1 data-i18n="mystery-black-hole-title">Black Holes</h1>
+                    <p data-i18n="mystery-black-hole-desc">The invisible monsters of the universe that swallow everything, even light!</p>
+                    <button class="btn-premium" data-i18n-btn="btn-learn-more"><a href="Cosmos/BlackHole.html">Learn More</a></button>
+                </div>
+            </div>
+            <!-- White Hole -->
+            <div class="mystery-card">
+                <div class="mystery-img"><img src="Img/WhiteHole_premium.png" alt="White Hole"></div>
+                <div class="mystery-p">
+                    <h1 data-i18n="mystery-white-hole-title">White Holes</h1>
+                    <p data-i18n="mystery-white-hole-desc">The mysterious opposites of black holes that spew matter into space!</p>
+                    <button class="btn-premium" data-i18n-btn="btn-learn-more"><a href="Cosmos/WhiteHole.html">Learn More</a></button>
+                </div>
+            </div>
+        </div>
+      </section>
+            <!-- Famous Missions Section -->
+      <section id="famous-missions">
+        <h1 data-i18n="missions-section-title" class="section-title-premium">Historic Space Missions</h1>
+        <div class="missions-grid">
+            
+            <!-- 1. Apollo 11 -->
+            <div class="mission-card">
+                <div class="mission-header">
+                    <div class="mission-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="mission-title-group">
+                        <h3 data-i18n="msN-1" class="mission-name">Apollo 11</h3>
+                        <div class="mission-meta">
+                            <span><i class="fa-solid fa-globe-americas"></i> <span data-i18n="msC-1">United States</span></span>
+                            <span><i class="fas fa-calendar-alt"></i> <span data-i18n="msY-1">1969</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-body">
+                    <div class="mission-goal">
+                        <h4 data-i18n="lbl-goal">Mission Goal</h4>
+                        <p data-i18n="msG-1">Land humans on the Moon and return them safely to Earth</p>
+                    </div>
+                    <div class="mission-results">
+                        <h4 data-i18n="lbl-results">Mission Results</h4>
+                        <ul data-i18n="msR-1">
+                            <li>First human landing on the Moon</li>
+                            <li>Collected Moon rock and soil samples</li>
+                            <li>Proved human deep-space travel is possible</li>
+                        </ul>
+                    </div>
+                    <div class="mission-impact">
+                        <h4 data-i18n="lbl-impact">Why it matters</h4>
+                        <p data-i18n="msI-1">Changed human history and began modern space exploration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Voyager -->
+            <div class="mission-card">
+                <div class="mission-header">
+                    <div class="mission-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="mission-title-group">
+                        <h3 data-i18n="msN-2" class="mission-name">Voyager 1 & 2</h3>
+                        <div class="mission-meta">
+                            <span><i class="fas fa-globe-americas"></i> <span data-i18n="msC-2">United States</span></span>
+                            <span><i class="fas fa-calendar-alt"></i> <span data-i18n="msY-2">1977</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-body">
+                    <div class="mission-goal">
+                        <h4 data-i18n="lbl-goal">Mission Goal</h4>
+                        <p data-i18n="msG-2">Explore the outer planets of the solar system</p>
+                    </div>
+                    <div class="mission-results">
+                        <h4 data-i18n="lbl-results">Mission Results</h4>
+                        <ul data-i18n="msR-2">
+                             <li>First close-up images of Jupiter, Saturn, Uranus, Neptune</li>
+                             <li>Discovered active volcanoes on Io</li>
+                             <li>Voyager 1 entered interstellar space</li>
+                        </ul>
+                    </div>
+                    <div class="mission-impact">
+                        <h4 data-i18n="lbl-impact">Why it matters</h4>
+                        <p data-i18n="msI-2">Extended human knowledge beyond the solar system.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Hubble -->
+            <div class="mission-card">
+                <div class="mission-header">
+                    <div class="mission-icon"><i class="fa-solid fa-telescope"></i></div>
+                    <div class="mission-title-group">
+                        <h3 data-i18n="msN-3" class="mission-name">Hubble Telescope</h3>
+                        <div class="mission-meta">
+                            <span><i class="fas fa-globe"></i> <span data-i18n="msC-3">NASA + ESA</span></span>
+                            <span><i class="fas fa-calendar-alt"></i> <span data-i18n="msY-3">1990</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-body">
+                    <div class="mission-goal">
+                        <h4 data-i18n="lbl-goal">Mission Goal</h4>
+                        <p data-i18n="msG-3">Observe the universe from above Earth’s atmosphere</p>
+                    </div>
+                    <div class="mission-results">
+                        <h4 data-i18n="lbl-results">Mission Results</h4>
+                        <ul data-i18n="msR-3">
+                            <li>Deep images of distant galaxies</li>
+                             <li>Calculated age of universe</li>
+                             <li>Evidence of universe expansion</li>
+                        </ul>
+                    </div>
+                    <div class="mission-impact">
+                        <h4 data-i18n="lbl-impact">Why it matters</h4>
+                        <p data-i18n="msI-3">Revolutionized astronomy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Curiosity -->
+            <div class="mission-card">
+                <div class="mission-header">
+                    <div class="mission-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="mission-title-group">
+                        <h3 data-i18n="msN-4" class="mission-name">Curiosity Rover</h3>
+                        <div class="mission-meta">
+                            <span><i class="fas fa-globe-americas"></i> <span data-i18n="msC-4">United States</span></span>
+                            <span><i class="fas fa-calendar-alt"></i> <span data-i18n="msY-4">2012</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-body">
+                    <div class="mission-goal">
+                        <h4 data-i18n="lbl-goal">Mission Goal</h4>
+                        <p data-i18n="msG-4">Study Mars’ surface and determine if it once supported life</p>
+                    </div>
+                    <div class="mission-results">
+                        <h4 data-i18n="lbl-results">Mission Results</h4>
+                        <ul data-i18n="msR-4">
+                             <li>Found evidence of ancient liquid water</li>
+                             <li>Detected organic molecules</li>
+                             <li>Analyzed Martian soil</li>
+                        </ul>
+                    </div>
+                    <div class="mission-impact">
+                        <h4 data-i18n="lbl-impact">Why it matters</h4>
+                        <p data-i18n="msI-4">Showed Mars was once habitable.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Perseverance -->
+            <div class="mission-card">
+                <div class="mission-header">
+                    <div class="mission-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="mission-title-group">
+                        <h3 data-i18n="msN-5" class="mission-name">Perseverance Rover</h3>
+                        <div class="mission-meta">
+                            <span><i class="fas fa-globe-americas"></i> <span data-i18n="msC-5">United States</span></span>
+                            <span><i class="fas fa-calendar-alt"></i> <span data-i18n="msY-5">2021</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-body">
+                    <div class="mission-goal">
+                        <h4 data-i18n="lbl-goal">Mission Goal</h4>
+                        <p data-i18n="msG-5">Search for ancient life and collect samples</p>
+                    </div>
+                    <div class="mission-results">
+                        <h4 data-i18n="lbl-results">Mission Results</h4>
+                        <ul data-i18n="msR-5">
+                             <li>Collected rock samples for return</li>
+                             <li>Recorded Mars sounds</li>
+                             <li>Tested first helicopter (Ingenuity)</li>
+                        </ul>
+                    </div>
+                    <div class="mission-impact">
+                        <h4 data-i18n="lbl-impact">Why it matters</h4>
+                        <p data-i18n="msI-5">Key step toward human missions to Mars.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. ISS -->
+            <div class="mission-card">
+                <div class="mission-header">
+                    <div class="mission-icon"><i class="fa-solid fa-rocket"></i></i></div>
+                    <div class="mission-title-group">
+                        <h3 data-i18n="msN-6" class="mission-name">International Space Station</h3>
+                        <div class="mission-meta">
+                            <span><i class="fas fa-globe"></i> <span data-i18n="msC-6">International</span></span>
+                            <span><i class="fas fa-calendar-alt"></i> <span data-i18n="msY-6">1998</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-body">
+                    <div class="mission-goal">
+                        <h4 data-i18n="lbl-goal">Mission Goal</h4>
+                        <p data-i18n="msG-6">Conduct scientific research in microgravity</p>
+                    </div>
+                    <div class="mission-results">
+                        <h4 data-i18n="lbl-results">Mission Results</h4>
+                        <ul data-i18n="msR-6">
+                             <li>Medical breakthroughs</li>
+                             <li>Long-term space effects on body</li>
+                             <li>Deep-space tech testing</li>
+                        </ul>
+                    </div>
+                    <div class="mission-impact">
+                        <h4 data-i18n="lbl-impact">Why it matters</h4>
+                        <p data-i18n="msI-6">Essential for future deep-space travel.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. James Webb -->
+            <div class="mission-card">
+                <div class="mission-header">
+                    <div class="mission-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="mission-title-group">
+                        <h3 data-i18n="msN-7" class="mission-name">James Webb Telescope</h3>
+                        <div class="mission-meta">
+                            <span><i class="fas fa-globe"></i> <span data-i18n="msC-7">NASA + ESA + CSA</span></span>
+                            <span><i class="fas fa-calendar-alt"></i> <span data-i18n="msY-7">2021</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-body">
+                    <div class="mission-goal">
+                        <h4 data-i18n="lbl-goal">Mission Goal</h4>
+                        <p data-i18n="msG-7">Study the early universe and exoplanets</p>
+                    </div>
+                    <div class="mission-results">
+                        <h4 data-i18n="lbl-results">Mission Results</h4>
+                        <ul data-i18n="msR-7">
+                             <li>Unprecedented images of early galaxies</li>
+                             <li>Detailed exoplanet atmospheres</li>
+                             <li>Star formation insights</li>
+                        </ul>
+                    </div>
+                    <div class="mission-impact">
+                        <h4 data-i18n="lbl-impact">Why it matters</h4>
+                        <p data-i18n="msI-7">Looks deeper into space than any telescope before.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </section>
+
+      <section id="famous-figures">
+        <h1 data-i18n="figures-section-title" class="section-title-premium">Legends of Space</h1>
+        
+        <!-- Scientists Subsection -->
+        <div class="figures-subsection">
+            <h2 data-i18n="subtitle-scientists" class="figures-subtitle">Famous Scientists</h2>
+            <div class="figures-grid">
+                <!-- Newton -->
+                <div class="figure-card">
+                    <div class="figure-img-container"><img src="Img/Isaac Newton.jpeg" alt="Isaac Newton"></div>
+                    <h3 data-i18n="sc-1-name" class="figure-name">Isaac Newton</h3>
+                    <div data-i18n="sc-1-role" class="figure-role">Physicist & Astronomer</div>
+                    <p data-i18n="sc-1-why" class="figure-info">Created the laws of motion and gravity.</p>
+                    <div data-i18n="sc-1-fact" class="figure-fact">Every space mission uses Newton’s laws.</div>
+                </div>
+                <!-- Einstein -->
+                <div class="figure-card">
+                    <div class="figure-img-container"><img src="Img/Albert Einstein.jpeg" alt="Albert Einstein"></div>
+                    <h3 data-i18n="sc-2-name" class="figure-name">Albert Einstein</h3>
+                    <div data-i18n="sc-2-role" class="figure-role">Theoretical Physicist</div>
+                    <p data-i18n="sc-2-why" class="figure-info">Changed our understanding of space, time, and gravity.</p>
+                    <div data-i18n="sc-2-fact" class="figure-fact">GPS satellites depend on his equations.</div>
+                </div>
+                <!-- Galileo -->
+                <div class="figure-card">
+                    <div class="figure-img-container"><img src="Img/Galileo Galilei.jpeg" alt="Galileo Galilei"></div>
+                    <h3 data-i18n="sc-3-name" class="figure-name">Galileo Galilei</h3>
+                    <div data-i18n="sc-3-role" class="figure-role">Astronomer</div>
+                    <p data-i18n="sc-3-why" class="figure-info">First to use a telescope to study space.</p>
+                    <div data-i18n="sc-3-fact" class="figure-fact">Called the "Father of Modern Astronomy".</div>
+                </div>
+                <!-- Hubble -->
+                <div class="figure-card">
+                    <div class="figure-img-container"><img src="Img/Edwin Hubble.jpeg" alt="Edwin Hubble"></div>
+                    <h3 data-i18n="sc-4-name" class="figure-name">Edwin Hubble</h3>
+                    <div data-i18n="sc-4-role" class="figure-role">Astronomer</div>
+                    <p data-i18n="sc-4-why" class="figure-info">Discovered that the universe is expanding.</p>
+                    <div data-i18n="sc-4-fact" class="figure-fact">The Hubble Space Telescope is named after him.</div>
+                </div>
+                <!-- Hawking -->
+                <div class="figure-card">
+                    <div class="figure-img-container"><img src="Img/Stephen Hawking.jpeg" alt="Stephen Hawking"></div>
+                    <h3 data-i18n="sc-5-name" class="figure-name">Stephen Hawking</h3>
+                    <div data-i18n="sc-5-role" class="figure-role">Cosmologist</div>
+                    <p data-i18n="sc-5-why" class="figure-info">Studied black holes and the origin of the universe.</p>
+                    <div data-i18n="sc-5-fact" class="figure-fact">Connected physics with cosmology.</div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Astronauts Subsection -->
+        <div class="figures-subsection">
+            <h2 data-i18n="subtitle-astronauts" class="figures-subtitle">Famous Astronauts</h2>
+            <div class="figures-grid">
+                <!-- Gagarin -->
+                <div class="figure-card">
+                    <div class="figure-img-container"><img src="Img/Yuri Gagarin.jpeg" alt="Yuri Gagarin"></div>
+                    <h3 data-i18n="ast-1-name" class="figure-name">Yuri Gagarin</h3>
+                    <div data-i18n="ast-1-role" class="figure-role">First Human in Space</div>
+                    <p data-i18n="ast-1-why" class="figure-info">First person to orbit Earth (1961).</p>
+                    <div data-i18n="ast-1-fact" class="figure-fact">Started the human spaceflight era.</div>
+                </div>
+                <!-- Armstrong -->
+                <div class="figure-card">
+                    <div class="figure-img-container"><img src="Img/Neil Armstrong.jpeg" alt="Neil Armstrong"></div>
+                    <h3 data-i18n="ast-2-name" class="figure-name">Neil Armstrong</h3>
+                    <div data-i18n="ast-2-role" class="figure-role">American Astronaut</div>
+                    <p data-i18n="ast-2-why" class="figure-info">First human to walk on the Moon.</p>
+                    <div data-i18n="ast-2-fact" class="figure-fact">A historic moment for humanity.</div>
+                </div>
+                <!-- Aldrin -->
+                <div class="figure-card">
+                    <div class="figure-img-container"><img src="Img/Buzz Aldrin.jpeg" alt="Buzz Aldrin"></div>
+                    <h3 data-i18n="ast-3-name" class="figure-name">Buzz Aldrin</h3>
+                    <div data-i18n="ast-3-role" class="figure-role">Astronaut</div>
+                    <p data-i18n="ast-3-why" class="figure-info">Second person to walk on the Moon.</p>
+                    <div data-i18n="ast-3-fact" class="figure-fact">Conducted important lunar experiments.</div>
+                </div>
+                <!-- Hadfield -->
+                <div class="figure-card">
+                    <div class="figure-img-container"><img src="Img/Chris Hadfield.jpeg" alt="Chris Hadfield"></div>
+                    <h3 data-i18n="ast-4-name" class="figure-name">Chris Hadfield</h3>
+                    <div data-i18n="ast-4-role" class="figure-role">Canadian Astronaut</div>
+                    <p data-i18n="ast-4-why" class="figure-info">Made space education popular from the ISS.</p>
+                    <div data-i18n="ast-4-fact" class="figure-fact">Combined science and communication.</div>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!-- Main Spacer Chat Section -->
+      <section id="spacer">
+        <h1 data-i18n="chat-title">Chat with our AI</h1>
+        <h2 data-i18n="chat-spacer-name">Spacer</h2>
+        <a href="Spacer.html" data-i18n="btn-let-chat">Let's Chat with Spacer</a>
+      </section>
+
+
+
+      <!-- Subscription Section -->
+      <section id="subscribe-section">
+        <div class="subscribe-container">
+            <h2 data-i18n="sub-title">Stay Alerted!</h2>
+            <p data-i18n="sub-desc">Get notified about rare cosmic events 1 week before they happen. It's 100% free!</p>
+            <form id="subscribe-form">
+                <input type="email" id="sub-email" placeholder="Enter your email" required>
+                <button type="submit" data-i18n="btn-subscribe">Subscribe for Free</button>
+            </form>
+            <p id="sub-message" class="hidden"></p>
+        </div>
+      </section>
+
+      <!-- Famous Figures Section -->
+
+    <!-- Footer -->
+     <footer data-i18n="footer-text">
+        &copy; 2025 Youssef Emad. All rights reserved.
+     </footer>
+     </main>
+
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
+    <script src="events.js"></script>
+</body>
+
+    
+</body>
+</html>

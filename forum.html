@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Forum | Cubs in Space</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="forum.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="img-logo">
+            <a href="index.html"><img src="Img/star-logo-withbg-removebg-preview.png" alt="Our Logo"></a>
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="index.html#home" data-i18n="nav-home">Home</a>
+                <a href="index.html#Earth" data-i18n="nav-earth">Earth</a>
+                <a href="index.html#Planets" data-i18n="nav-planets">Planets</a>
+                <a href="forum.html" class="active" data-i18n="nav-forum">Forum</a>
+                <a href="Spacer.html" data-i18n="nav-spacer">Spacer</a>            
+            </nav>
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="forum-container">
+        <!-- Forum Hero -->
+        <section class="forum-hero">
+            <h1 data-i18n="forum-title">Galactic Community</h1>
+            <p data-i18n="forum-subtitle">Share your cosmic thoughts and debate the mysteries of the universe!</p>
+        </section>
+
+        <!-- Add Question Section -->
+        <section class="add-question-section">
+            <div class="glass-card input-card">
+                <textarea id="new-question-text" placeholder="Ask a question... e.g., Do aliens exist?" data-i18n="placeholder-question"></textarea>
+                <div class="action-row">
+                    <button id="btn-post-question" data-i18n="btn-post-question">Post Question</button>
+                    <!-- Loading Spinner -->
+                    <div id="loading-spinner" class="spinner hidden"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Questions Feed -->
+        <section id="questions-feed" class="questions-feed">
+            <!-- Questions will be loaded here by JS -->
+            <!-- Skeleton Loader Example -->
+            <div class="skeleton-loader"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer data-i18n="footer-text">
+        &copy; 2025 Youssef Emad. All rights reserved.
+    </footer>
+
+    <!-- Firebase SDKs (Realtime Database version) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    
+    <!-- Config and Logic -->
+    <script src="firebase-config.js"></script>
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
+    <script src="forum.js"></script>
+</body>
+</html>

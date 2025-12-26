@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars - Cubs in Space</title>
+    <link rel="stylesheet" href="planet-style.css">
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img src="../Img/star-logo-withbg-removebg-preview.png" alt="Our Logo">
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="../index.html" data-i18n="nav-home">Home</a>
+                <a href="../index.html#Planets" data-i18n="nav-planets">Planets</a>
+            </nav>
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1 class="hero-title" data-i18n="mars-name">Mars</h1>
+            <h2 class="hero-subtitle" data-i18n="planet-hero-subtitle-mars">The Red Planet</h2>
+            <p class="hero-desc" data-i18n="planet-hero-desc-mars">
+                Mars is the fourth planet from the Sun and our dream destination! It's a dusty, cold, desert world with a very thin atmosphere. It's famous for its red color, which comes from rusted iron in the ground. It's like a planet covered in rusty dust! Mars is one of the most explored bodies in our solar system, and it's the only planet where we've sent rovers to roam the alien landscape.
+            </p>
+        </section>
+
+        <section class="data-grid">
+            <div class="data-card">
+                <span class="data-icon">🏔️</span>
+                <span class="data-label" data-i18n="data-mountain">Highest Mountain</span>
+                <span class="data-value">Olympus Mons</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">📅</span>
+                <span class="data-label" data-i18n="data-day">Day Length</span>
+                <span class="data-value">24h 37m</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">🌑</span>
+                <span class="data-label" data-i18n="data-moons">Moons</span>
+                <span class="data-value">2 (Phobos, Deimos)</span>
+            </div>
+            <div class="data-card">
+                <span class="data-icon">🤖</span>
+                <span class="data-label" data-i18n="data-pop">Population</span>
+                <span class="data-value" data-i18n="pop-mars">Only Robots!</span>
+            </div>
+        </section>
+
+        <section class="deep-dive-section">
+            <span class="section-label" data-i18n="scientific-deep-dive">Scientific Deep Dive</span>
+            <div class="info-section">
+                <div class="info-block">
+                    <h2 data-i18n="info-mars-mountain-title">A Mountain Higer than Everest?</h2>
+                    <p data-i18n="info-mars-mountain-desc">
+                        Yes! Mars is home to Olympus Mons, the largest volcano in the entire solar system. It stands about three times taller than Mount Everest on Earth! It also has a giant canyon called Valles Marineris that would stretch across the entire United States.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-mars-life-title">Is there Life?</h2>
+                    <p data-i18n="info-mars-life-desc">
+                        Scientists think that billions of years ago, Mars was warmer and wetter, maybe just like Earth. We send rovers (like Curiosity and Perseverance) to look for signs of ancient microscopic life in the dried-up lake beds.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2 data-i18n="info-mars-home-title">Our Future Home?</h2>
+                    <p data-i18n="info-mars-home-desc">
+                        NASA and other agencies want to send astronauts to Mars in the future. It's a tough trip that takes at least 6 months, and you'd have to wear a spacesuit all the time because there's no oxygen to breathe!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="challenges-section">
+            <span class="section-label" data-i18n="challenges-title">The Cosmic Challenges</span>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <span class="card-icon">🌬️</span>
+                    <h3 data-i18n="challenges-title">Challenges</h3>
+                    <p data-i18n="mars-challenges">Very thin atmosphere (mostly CO2) and extreme cold (average -60°C). Dust storms can cover the entire planet for weeks.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="card-icon">🏠</span>
+                    <h3 data-i18n="solutions-title">Future Solutions</h3>
+                    <p data-i18n="mars-solutions">Using pressurized habitats and 3D-printing homes from Martian soil (regolith). Growing food in specialized greenhouses with artificial lighting.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 style="font-family: 'Audiowide'; color: var(--title-color); font-size: 40px; margin-bottom: 30px;" data-i18n="gallery-title-mars">Mars Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                     <!-- User: Add Image 1 Here -->
+                    <img src="../Img/mars.png" alt="Mars Full Planet">
+                    <div class="gallery-caption" data-i18n="caption-mars-1">The dusty red world</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 2 Here -->
+                    <img src="../Img/mars1.jpeg" alt="Mars Surface Rover">
+                    <div class="gallery-caption" data-i18n="caption-mars-2">A rover exploring the surface</div>
+                </div>
+                <div class="gallery-item">
+                     <!-- User: Add Image 3 Here -->
+                    <img src="../Img/mars2.jpeg" alt="Olympus Mons">
+                    <div class="gallery-caption" data-i18n="caption-mars-3">Olympus Mons, the giant volcano</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-btn-container">
+            <button data-i18n-btn="back-to-solar"><a href="../index.html">Back to Solar System</a></button>
+        </div>
+    </main>
+
+    <footer data-i18n="footer-text">
+        &copy; 2025 Cubs in Space. Explore the Universe!
+    </footer>
+    <script src="../translations.js"></script>
+    <script src="../i18n.js"></script>
+</body>
+</html>
