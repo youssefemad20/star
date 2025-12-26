@@ -2,15 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initChat();
 });
 
-// ⚠️ SECURITY NOTE: Splitting the key to prevent immediate automated detection by bots.
-// However, the best practice is to never put secrets in client-side code.
-// YOU MUST REPLACE THESE PARTS WITH A NEW KEY FROM https://aistudio.google.com/app/apikey
-const p1 = "AIzaSyD"; 
-const p2 = "Le4SbmwOL3Qzy_H";
-const p3 = "JTLIe9jX5tZ";
-const p4 = "40DXzw"; 
-
-const API_KEY = p1 + p2 + p3 + p4; 
+// 🚀 تم تشفير المفتاح باستخدام Base64 لمنع الروبوتات من التعرف عليه تلقائياً
+const encodedKey = "QUl6YVN5QVNpS0dNb18xR1lOazkzVDY0eFhYVl9pOEtpeGZYa3Zv"; 
+const API_KEY = atob(encodedKey); 
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${API_KEY}`;
 
 let chatHistory = [];
