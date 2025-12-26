@@ -124,4 +124,17 @@
   #famous-figures {
     padding: 60px 20px;
   }
+  .figures-subtitle {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .figure-img-container {
+    width: 120px;
+    height: 120px;
+  }
+  .figure-name {
+    font-size: 1.25rem;
+  }
 }

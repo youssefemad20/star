@@ -170,7 +170,25 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .galaxy-title { font-size: 3rem; }
-    .galaxy-hero { height: 50vh; }
-    .info-card { padding: 25px; }
+    .galaxy-title {
+        font-size: 2.5rem;
+    }
+    .galaxy-hero {
+        height: 300px;
+    }
+    .galaxy-container {
+        padding: 20px;
+    }
+    .identity-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .identity-grid {
+        grid-template-columns: 1fr;
+    }
+    .card-title {
+        font-size: 1.2rem;
+    }
 }

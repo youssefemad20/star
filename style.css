@@ -46,7 +46,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
+  padding: 15px 5%;
   background-color: rgba(10, 25, 41, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -146,6 +146,36 @@ header nav a:hover {
   text-shadow: 0 0 10px rgba(100, 181, 246, 0.6);
   transform: translateY(-2px);
 }
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: var(--title-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
 /* Removed redundant header styling */
 
 #home {
@@ -171,11 +201,12 @@ header nav a:hover {
 .Home-message h1 {
   color: transparent;
   -webkit-text-stroke: 2px var(--title-color);
-  font-size: 100px;
+  font-size: clamp(40px, 10vw, 100px);
   font-weight: bold;
   font-family: "Audiowide", sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-top: 100px;
+  margin-top: clamp(40px, 10vh, 100px);
+  text-align: center;
 }
 .Home-message p {
   text-align: center;
@@ -245,19 +276,20 @@ button a,
   padding: 70px;
 }
 .earth-p h1 {
-  font-size: 100px;
+  font-size: clamp(40px, 10vw, 100px);
   font-weight: bold;
-  margin-top: 100px;
+  margin-top: clamp(40px, 5vh, 100px);
   color: transparent;
   -webkit-text-stroke: 2px var(--title-color);
   font-family: "Audiowide", sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 .earth-p p {
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: bold;
   max-width: 1000px;
-  margin-left: 50px;
+  text-align: center;
 }
 .earth-p .earth-img {
   flex: 1;
@@ -1038,8 +1070,80 @@ footer {
   line-height: 1.6;
 }
 
+@media (max-width: 1024px) {
+  header {
+    padding: 15px 3%;
+  }
+}
+
 @media (max-width: 768px) {
-  #mysteries {
-    padding: 60px 20px;
+  header {
+    padding: 15px 20px;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  header nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  header nav.active {
+    right: 0;
+  }
+
+  header nav a {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  #home, .earth-p {
+    padding: 40px 20px;
+  }
+
+  .earth-p h1, .Home-message h1 {
+    font-size: 50px;
+    margin-top: 30px;
+  }
+
+  #Earth {
+    flex-direction: column-reverse;
+  }
+
+  .earth-img img {
+    max-width: 80%;
+  }
+
+  .planet-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .earth-p h1, .Home-message h1 {
+    font-size: 40px;
+  }
+
+  .Home-message p {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 12px 25px;
+    width: 100%;
   }
 }

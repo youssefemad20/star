@@ -235,12 +235,53 @@
 }
 
 /* Responsive */
+@media (max-width: 992px) {
+    .core-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .tech-details-grid {
         grid-template-columns: 1fr;
     }
     
     .tech-hero h1 {
-        font-size: 40px;
+        font-size: 38px;
+    }
+
+    .tech-card {
+        padding: 25px;
+    }
+
+    .tech-card h2 {
+        font-size: 2rem;
+    }
+
+    .insight-bullets p {
+        font-size: 1.2rem;
+    }
+
+    .tech-insight h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .core-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-hero h1 {
+        font-size: 32px;
+    }
+
+    .tech-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .tech-examples, .tech-reason {
+        padding: 15px;
+        font-size: 14px;
     }
 }

@@ -151,4 +151,21 @@
         flex-direction: column;
         gap: 5px;
     }
+    .mission-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .mission-icon {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .mission-name {
+        font-size: 1.2rem;
+    }
+    .mission-card {
+        padding: 15px;
+    }
 }
