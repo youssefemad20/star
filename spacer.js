@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // 🚀 تم تشفير المفتاح المؤمن باستخدام Base64
 const encodedKey = "QUl6YVN5QWNLcUVQdWtxVVNXYUJybl9XNHozOXYwWF9TNkM4RGFR"; 
 const API_KEY = atob(encodedKey); 
-const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
 let chatHistory = [];
 
@@ -28,23 +27,42 @@ async function sendMessage() {
 
     if (!message) return;
 
-    // Add User Message
     addMessageToUI("user", message);
     userInput.value = '';
 
-    // Show loading state (optional)
     const loadingId = addMessageToUI("ai", "Thinking...", true);
 
-    try {
-        const responseText = await callGeminiAPI(message);
-        // Remove loading and add real response
+    // List of models to try in order of preference (December 2025 status)
+    const modelsToTry = [
+        "gemini-2.0-flash-lite", // New lightweight stable
+        "gemini-2.0-flash",      // New stable
+        "gemini-1.5-flash",      // Legacy stable
+        "gemini-pro"             // Basic stable
+    ];
+
+    let lastError = null;
+    let success = false;
+
+    for (const modelId of modelsToTry) {
+        try {
+            console.log(`Trying model: ${modelId}...`);
+            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelId}:generateContent?key=${API_KEY}`;
+            const responseText = await callGeminiAPI(message, endpoint);
+            
+            removeMessage(loadingId);
+            addMessageToUI("ai", responseText);
+            success = true;
+            break; // Stop if one works
+        } catch (error) {
+            console.warn(`Model ${modelId} failed:`, error.message);
+            lastError = error;
+            // Continue to next model
+        }
+    }
+
+    if (!success) {
         removeMessage(loadingId);
-        addMessageToUI("ai", responseText);
-    } catch (error) {
-        removeMessage(loadingId);
-        // Show specific error for debugging
-        addMessageToUI("ai", `Communication Error: ${error.message}. <br><br>Please check that your API Key is correct and enabled.`);
-        console.error(error);
+        addMessageToUI("ai", `Communication Error: All models failed. <br>Last Error: ${lastError.message}. <br><br>Please check your Google AI Studio quota or try a new API key.`);
     }
 }
 
@@ -76,7 +94,7 @@ function removeMessage(id) {
     if (msg) msg.remove();
 }
 
-async function callGeminiAPI(userMessage) {
+async function callGeminiAPI(userMessage, endpoint) {
     // 1. Construct the System Prompt from spaceData
     const systemPrompt = `
     ${spaceData.system_role}
@@ -95,7 +113,7 @@ async function callGeminiAPI(userMessage) {
     };
 
     // 3. Fetch
-    const response = await fetch(GEMINI_ENDPOINT, {
+    const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
