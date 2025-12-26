@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // 🚀 تم تشفير المفتاح المؤمن باستخدام Base64
 const encodedKey = "QUl6YVN5QWNLcUVQdWtxVVNXYUJybl9XNHozOXYwWF9TNkM4RGFR"; 
 const API_KEY = atob(encodedKey); 
-const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
 let chatHistory = [];
 
