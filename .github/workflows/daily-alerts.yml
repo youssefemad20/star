@@ -27,4 +27,5 @@ jobs:
           EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
           EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
           EMAILJS_PRIVATE_KEY: ${{ secrets.EMAILJS_PRIVATE_KEY }}
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
         run: node scripts/send_alerts.js

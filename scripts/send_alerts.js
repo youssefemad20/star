@@ -21,33 +21,76 @@ if (!admin.apps.length) {
 
 const db = admin.database();
 
-// Curated Events List (Keep this in sync with events.js or fetch from DB)
+// 1. Fetch Live NASA Alerts (DONKI)
+async function fetchLatestNASAAlert() {
+    const NASA_API_KEY = process.env.NASA_API_KEY || 'gwxNYmeMRjYXibh6wwkTnihjeSNhOK24nd2aCV4p';
+    try {
+        console.log("Fetching live NASA alerts...");
+        const response = await axios.get(`https://api.nasa.gov/DONKI/notifications?type=all&api_key=${NASA_API_KEY}`);
+        const alerts = response.data;
+        
+        if (alerts && alerts.length > 0) {
+            const latest = alerts[0];
+            return {
+                id: latest.messageID,
+                title_en: 'NASA Space Weather Alert',
+                date: latest.messageIssueTime.split('T')[0],
+                time_en: latest.messageIssueTime.split('T')[1].replace('Z', ' UTC'),
+                description: 'New space weather notification from NASA. Potential solar activity or magnetic event detected.',
+                scientific_info: latest.messageBody
+            };
+        }
+    } catch (e) {
+        console.warn("NASA API Fetch failed:", e.message);
+    }
+    return null;
+}
+
+// Curated Events List (Backup/Specific Events)
 const cosmicEvents = [
     {
         id: 'eclipse-demo',
         title_en: 'Solar Eclipse',
-        title_ar: 'كسوف الشمس',
         date: '2025-12-28',
         time_en: '10:00 UTC',
-        time_ar: '10:00 بتوقيت جرينتش'
+        description: 'A beautiful solar eclipse is coming!'
     }
-    // ... add others or fetch from Firebase
 ];
 
 async function sendDailyAlerts() {
-    console.log("Checking for upcoming events...");
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const tomorrowStr = tomorrow.toISOString().split('T')[0];
+    console.log("Checking for cosmic events...");
+    
+    // 1. Try to get NASA Live Alert first
+    const liveEvent = await fetchLatestNASAAlert();
+    let upcomingEvent = null;
 
-    const upcomingEvent = cosmicEvents.find(e => e.date === tomorrowStr);
+    if (liveEvent) {
+        // Only send if it was issued today (for daily alerts)
+        const today = new Date().toISOString().split('T')[0];
+        if (liveEvent.date === today) {
+            upcomingEvent = liveEvent;
+            console.log("Live NASA Alert identified for today!");
+        }
+    }
+
+    // 2. Fallback to tomorrow's curated events if no live NASA alert today
+    if (!upcomingEvent) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const tomorrowStr = tomorrow.toISOString().split('T')[0];
+        upcomingEvent = cosmicEvents.find(e => e.date === tomorrowStr);
+        
+        if (upcomingEvent) {
+            upcomingEvent.scientific_info = upcomingEvent.description;
+        }
+    }
 
     if (!upcomingEvent) {
-        console.log("No events scheduled for tomorrow.");
+        console.log("No new live NASA alerts today and no events scheduled for tomorrow.");
         return;
     }
 
-    console.log(`Event found: ${upcomingEvent.title_en}. Fetching subscribers...`);
+    console.log(`Target Event: ${upcomingEvent.title_en}. Fetching subscribers...`);
 
     const snapshot = await db.ref('subscribers').once('value').catch(e => {
         throw new Error(`Firebase Database Error: ${e.message}`);
@@ -72,8 +115,8 @@ async function sendDailyAlerts() {
                 accessToken: process.env.EMAILJS_PRIVATE_KEY,
                 template_params: {
                     to_email: email,
-                    title: `Upcoming Event: ${upcomingEvent.title_en}`,
-                    event_description: `Attention! Tomorrow, ${upcomingEvent.date}, there is a ${upcomingEvent.title_en} at ${upcomingEvent.time_en}. Don't miss it!`
+                    title: upcomingEvent.title_en,
+                    event_description: `Alert! ${upcomingEvent.description}\n\nDate: ${upcomingEvent.date}\nTime: ${upcomingEvent.time_en}\n\nDetails:\n${upcomingEvent.scientific_info.substring(0, 500)}...`
                 }
             });
             console.log(`Sent to: ${email}`);
