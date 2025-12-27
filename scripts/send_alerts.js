@@ -3,11 +3,20 @@ const axios = require('axios');
 
 // Initialize Firebase Admin (using environment variables in GitHub)
 if (!admin.apps.length) {
-    const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-    admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
-        databaseURL: "https://star-f329b-default-rtdb.firebaseio.com"
-    });
+    try {
+        if (!process.env.FIREBASE_SERVICE_ACCOUNT) {
+            throw new Error("FIREBASE_SERVICE_ACCOUNT secret is missing!");
+        }
+        const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+        admin.initializeApp({
+            credential: admin.credential.cert(serviceAccount),
+            databaseURL: "https://star-f329b-default-rtdb.firebaseio.com"
+        });
+        console.log("Firebase Admin initialized successfully.");
+    } catch (e) {
+        console.error("Firebase Initialization Error:", e.message);
+        process.exit(1);
+    }
 }
 
 const db = admin.database();
@@ -40,16 +49,18 @@ async function sendDailyAlerts() {
 
     console.log(`Event found: ${upcomingEvent.title_en}. Fetching subscribers...`);
 
-    const snapshot = await db.ref('subscribers').once('value');
+    const snapshot = await db.ref('subscribers').once('value').catch(e => {
+        throw new Error(`Firebase Database Error: ${e.message}`);
+    });
     const subscribers = snapshot.val();
 
     if (!subscribers) {
-        console.log("No subscribers found.");
+        console.log("No subscribers found in database.");
         return;
     }
 
     const emails = Object.values(subscribers).map(s => s.email);
-    console.log(`Sending alerts to ${emails.length} subscribers...`);
+    console.log(`Found ${emails.length} subscribers. Sending alerts...`);
 
     for (const email of emails) {
         try {
