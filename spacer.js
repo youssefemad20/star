@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 🚀 تم تشفير المفتاح المؤمن باستخدام Base64
-const encodedKey = "QUl6YVN5QWNLcUVQdWtxVVNXYUJybl9XNHozOXYwWF9TNkM4RGFR"; 
+const encodedKey = "QUl6YVN5QzBTcXFLQVhILTZSYnZBOHludFdDSXlTSTVueXN2VkQw"; 
 const API_KEY = atob(encodedKey); 
 
 let chatHistory = [];

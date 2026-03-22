@@ -1,16 +1,11 @@
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.database(); // Use Realtime Database
-
 // DOM Elements
 const questionsFeed = document.getElementById('questions-feed');
 const btnPostQuestion = document.getElementById('btn-post-question');
 const newQuestionText = document.getElementById('new-question-text');
 const loadingSpinner = document.getElementById('loading-spinner');
 
-// Setup Realtime Listener
+// Setup Firebase Listener
 function loadQuestions() {
-    // Listen to 'questions' node
     const questionsRef = db.ref('questions');
     
     questionsRef.on('value', (snapshot) => {
@@ -22,8 +17,7 @@ function loadQuestions() {
             return;
         }
 
-        // Realtime DB returns an object, not array. Convert only entries [id, value]
-        // Reverse to show newest first
+        // Realtime DB returns an object, convert to array and reverse
         const entries = Object.entries(data).reverse();
 
         entries.forEach(([id, qData]) => {
@@ -31,7 +25,7 @@ function loadQuestions() {
         });
     }, (error) => {
         console.error("Error getting questions: ", error);
-        questionsFeed.innerHTML = '<div class="glass-card" style="text-align:center; color:red;">Error connecting to Realtime Database.</div>';
+        questionsFeed.innerHTML = '<div class="glass-card" style="text-align:center; color:red;">Error connecting to Database.</div>';
     });
 }
 
@@ -41,7 +35,6 @@ function renderQuestionCard(id, data) {
     card.className = 'glass-card question-card';
     card.id = `card-${id}`;
     
-    // Format Date (handle timestamp if exists, else generic)
     let dateStr = "Just now";
     if (data.timestamp) {
         dateStr = new Date(data.timestamp).toLocaleString();
@@ -58,7 +51,6 @@ function renderQuestionCard(id, data) {
         <div class="opinions-section">
             <h4 data-i18n="opinions-title" style="margin-bottom:10px; color:var(--primary-color);">Opinions</h4>
             <div id="opinions-${id}" class="opinions-container">
-                <div class="spinner" style="margin: 0 auto;"></div>
             </div>
             
             <!-- Add Opinion Form -->
@@ -71,15 +63,14 @@ function renderQuestionCard(id, data) {
 
     questionsFeed.appendChild(card);
     
-    // Load opinions for this question (Nested node)
+    // Listen to opinions specifically for this question
     loadOpinions(id);
 }
 
-// Load Opinions Sub-node
+// Load Opinions Sub-node dynamically
 function loadOpinions(questionId) {
     const container = document.getElementById(`opinions-${questionId}`);
     
-    // Listener for specific question's opinions
     db.ref(`questions/${questionId}/opinions`).on('value', (snapshot) => {
         container.innerHTML = '';
         const data = snapshot.val();
@@ -89,7 +80,6 @@ function loadOpinions(questionId) {
             return;
         }
 
-        // Convert object to array
         Object.values(data).forEach(op => {
             const opDiv = document.createElement('div');
             opDiv.className = 'opinion-item';
@@ -121,7 +111,7 @@ btnPostQuestion.addEventListener('click', async () => {
         newQuestionText.value = '';
     } catch (error) {
         console.error("Error adding question: ", error);
-        alert("Could not post question. Check console.");
+        alert("Could not post question.");
     } finally {
         btnPostQuestion.disabled = false;
         loadingSpinner.classList.add('hidden');

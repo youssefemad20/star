@@ -1,12 +1,11 @@
 // Cosmic Events and Subscription System
 
-const NASA_API_KEY = 'gwxNYmeMRjYXibh6wwkTnihjeSNhOK24nd2aCV4p'; // Updated with user's key
+const NASA_API_KEY = 'QGMpMKQeT2jfs7CxjRLAT4sHsN63MP0oSV2lL6jg';
 
 // --- EmailJS Configuration ---
-// Get these from emailjs.com
 const EMAILJS_PUBLIC_KEY = 'h8k4AuhE6QlyDKvJS'; 
-const EMAILJS_SERVICE_ID = 'service_nmawfst';
-const EMAILJS_TEMPLATE_ID = 'template_0atp0ai';
+const EMAILJS_SERVICE_ID = 'service_m0gkwe9';
+const EMAILJS_TEMPLATE_ID = 'template_xawflaa';
 
 if (typeof emailjs !== 'undefined') {
     emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -17,9 +16,9 @@ if (typeof emailjs !== 'undefined') {
 const cosmicEvents = [
     {
         id: 'eclipse-demo',
-        title_en: 'Solar Eclipse (Upcoming)',
-        title_ar: 'كسوف الشمس (قريب جداً)',
-        date: '2025-12-28', // Set to 2 days from today (Dec 26)
+        title_en: 'Solar Eclipse',
+        title_ar: 'كسوف الشمس',
+        date: '2025-12-28',
         time_en: '10:00 UTC',
         time_ar: '10:00 بتوقيت جرينتش',
         desc_en: 'A rare solar eclipse is approaching! Witness the alignment of the Sun, Moon, and Earth.',
@@ -133,37 +132,34 @@ async function initSubscription() {
         e.preventDefault();
         const email = document.getElementById('sub-email').value;
         const lang = localStorage.getItem('selectedLanguage') || 'en';
+        const subscribeBtn = form.querySelector('button');
+
+        subscribeBtn.disabled = true;
 
         try {
-            // Save to Firebase if available
-            if (typeof firebase !== 'undefined' && firebase.database) {
-                const db = firebase.database();
-                const subscribersRef = db.ref('subscribers');
+            // Save to Firebase using the globally exposed db object
+            if (window.db) {
+                const subscribersRef = window.db.ref('subscribers');
                 await subscribersRef.push({
                     email: email,
                     subscribedAt: firebase.database.ServerValue.TIMESTAMP,
                     lang: lang
                 });
             } else {
-                console.warn("Firebase not initialized. Proceeding with Email notification only.");
+                console.warn("Firebase not initialized yet for subscriptions.");
             }
 
             // --- Send Welcome/Alert Email via EmailJS ---
-            // This will now run even if Firebase is not connected (important for Demo)
-            if (EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY' && EMAILJS_PUBLIC_KEY !== '') {
-                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            if (typeof emailjs !== 'undefined') {
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
                     to_email: email,
-                    title: lang === 'ar' ? 'تنبيه: كسوف الشمس يوم 28 ديسمبر!' : 'Alert: Solar Eclipse on Dec 28th!',
+                    title: lang === 'ar' ? 'تنبيه: كسوف الشمس القادم!' : 'Alert: Upcoming Solar Eclipse!',
                     event_description: lang === 'ar' ? 
-                        "نود تذكيرك بحدث كسوف الشمس القادم يوم 28/12/2025. أفضل وقت للمشاهدة هو الساعة 10:00 بتوقيت جرينتش." : 
-                        "We remind you of the upcoming Solar Eclipse on Dec 28th, 2025. Best viewing time is 10:00 UTC.",
+                        "نود تذكيرك بحدث كسوف الشمس القادم القريب. ابق مستعداً للمراقبة!" : 
+                        "We remind you of the upcoming Solar Eclipse soon. Get ready to watch!",
                     user_lang: lang
-                }).then((res) => {
-                    console.log("Email sent successfully!", res.status, res.text);
-                }).catch((err) => {
-                    console.error("EmailJS Failed:", err);
-                    alert("EmailJS Error: " + JSON.stringify(err)); // Show alert for easier debugging
                 });
+                console.log("Email sent successfully!");
             }
 
             showMessage(translations[lang]['sub-success'], 'success');
@@ -172,6 +168,8 @@ async function initSubscription() {
         } catch (error) {
             console.error("Subscription error:", error);
             showMessage(translations[lang]['sub-error'], 'error');
+        } finally {
+            subscribeBtn.disabled = false;
         }
     });
 
@@ -180,15 +178,5 @@ async function initSubscription() {
         messageEl.className = `message ${type}`;
         messageEl.classList.remove('hidden');
         setTimeout(() => messageEl.classList.add('hidden'), 5000);
-    }
-}
-
-// Logic to fetch NASA Astronomy Picture of the Day or Alerts could go here
-async function fetchNASAAlerts() {
-    try {
-        const response = await fetch(`https://api.nasa.gov/DONKI/notifications?type=all&api_key=${NASA_API_KEY}`);
-        const data = await response.json();
-    } catch (e) {
-        console.log("NASA API Error:", e);
     }
 }
