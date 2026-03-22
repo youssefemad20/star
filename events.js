@@ -71,17 +71,24 @@ async function initEvents() {
             
             // Only show if the alert is not older than 24 hours
             if (now < expiryDate) {
+                const eventType = latest.messageType || 'Space Weather';
+                
+                // Extract a small readable summary from the message body
+                let snippet = latest.messageBody ? latest.messageBody.substring(0, 150) + '...' : 'New space weather notification from NASA.';
+                // Clean up any hashes from raw markdown
+                snippet = snippet.replace(/#/g, '').replace(/\*/g, '');
+
                 liveAlert = {
                     id: latest.messageID,
-                    title_en: 'NASA Space Weather Alert',
-                    title_ar: 'تنبيه ناسا للطقس الفضائي',
+                    title_en: `NASA Alert: ${eventType}`,
+                    title_ar: `تنبيه ناسا: ${eventType}`,
                     date: latest.messageIssueTime.split('T')[0],
                     time_en: latest.messageIssueTime.split('T')[1].replace('Z', ' UTC'),
                     time_ar: latest.messageIssueTime.split('T')[1].replace('Z', ' بتوقيت جرينتش'),
-                    desc_en: 'New space weather notification from NASA. Potential solar activity or magnetic event detected.',
-                    desc_ar: 'إشعار جديد بحالة الطقس الفضائي من ناسا. تم رصد نشاط شمسي محتمل أو حدث مغناطيسي.',
+                    desc_en: snippet,
+                    desc_ar: `إشعار جديد بحالة الطقس الفضائي من ناسا (نوع: ${eventType}). يرجى قراءة التقرير العلمي أدناه لمزيد من التفاصيل.`,
                     scientific_en: latest.messageBody,
-                    scientific_ar: 'تنبيه طقس فضائي مباشر من ناسا (بيانات خام). يرجى مراجعة التفاصيل لمعرفة التأثيرات المحتملة.'
+                    scientific_ar: 'تنبيه طقس فضائي مباشر من ناسا (بيانات خام باللغة الإنجليزية).'
                 };
             }
         }
