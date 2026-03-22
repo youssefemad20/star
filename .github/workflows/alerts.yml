@@ -1,0 +1,21 @@
+name: Daily Space Alerts Action
+
+on:
+  schedule:
+    - cron: '0 8 * * *' # Runs at 08:00 UTC every day
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  check-and-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Alert Script
+        run: node scripts/send_alerts.js
