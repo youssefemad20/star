@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="galaxies.css">
     <link rel="stylesheet" href="technology.css">
     <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="quiz.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="theme.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -39,6 +41,7 @@
                 <span></span>
                 <span></span>
             </div>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark/Light Mode"></button>
             <select id="language-switcher">
                 <option value="en">English</option>
                 <option value="ar">العربية</option>
@@ -725,8 +728,23 @@
             });
         });
     </script>
-</body>
 
-    
+    <!-- Floating Quiz Button -->
+    <div id="quiz-float-btn-wrap">
+        <span class="quiz-float-hint" id="quiz-float-hint">تختبر نفسك في الفضاء؟</span>
+        <a href="quiz.html" class="quiz-float-btn" aria-label="Space Quiz">🧠</a>
+    </div>
+
+<script src="wow_facts.js"></script>
+<script>
+    // Update floating button hint text based on language
+    function updateQuizHint() {
+        var lang = localStorage.getItem('selectedLanguage') || 'en';
+        var hint = document.getElementById('quiz-float-hint');
+        if (hint) hint.textContent = lang === 'ar' ? 'تختبر نفسك في الفضاء؟' : 'Test yourself in space?';
+    }
+    updateQuizHint();
+    document.getElementById('language-switcher') && document.getElementById('language-switcher').addEventListener('change', updateQuizHint);
+</script>
 </body>
 </html>

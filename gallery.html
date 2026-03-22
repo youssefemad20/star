@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="gallery.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="theme.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -29,6 +30,7 @@
                 <span></span>
                 <span></span>
             </div>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark/Light Mode"></button>
             <select id="language-switcher">
                 <option value="en">English</option>
                 <option value="ar">العربية</option>
@@ -46,47 +48,80 @@
             <!-- photo1 to photo11 -->
             <div class="gallery-item">
                 <img src="Img/photo1.png" alt="Cosmic Capture 1">
-                <div class="gallery-overlay"><h3>Cosmic View 1</h3></div>
+                <div class="gallery-overlay">
+                    <h3>Stellar Nursery</h3>
+                    <p class="gallery-desc">A vibrant region of gas and dust where new stars are born.</p>
+                </div>
             </div>
             <div class="gallery-item">
                 <img src="Img/photo2.png" alt="Cosmic Capture 2">
-                <div class="gallery-overlay"><h3>Cosmic View 2</h3></div>
+                <div class="gallery-overlay">
+                    <h3>Galactic Core</h3>
+                    <p class="gallery-desc">The glowing, densely packed center of a distant spiral galaxy.</p>
+                </div>
             </div>
             <div class="gallery-item">
                 <img src="Img/photo3.png" alt="Cosmic Capture 3">
-                <div class="gallery-overlay"><h3>Cosmic View 3</h3></div>
+                <div class="gallery-overlay">
+                    <h3>Nebula Serenity</h3>
+                    <p class="gallery-desc">Colorful clouds of interstellar matter suspended in the void.</p>
+                </div>
             </div>
             <div class="gallery-item">
                 <img src="Img/photo4.png" alt="Cosmic Capture 4">
-                <div class="gallery-overlay"><h3>Cosmic View 4</h3></div>
+                <div class="gallery-overlay">
+                    <h3>Deep Space Echoes</h3>
+                    <p class="gallery-desc">Ancient light from galaxies millions of light-years away.</p>
+                </div>
             </div>
             <div class="gallery-item">
                 <img src="Img/photo5.png" alt="Cosmic Capture 5">
-                <div class="gallery-overlay"><h3>Cosmic View 5</h3></div>
+                <div class="gallery-overlay">
+                    <h3>Planetary Orbit</h3>
+                    <p class="gallery-desc">An exoplanet silhouetted against the bright light of its host star.</p>
+                </div>
             </div>
             <div class="gallery-item">
                 <img src="Img/photo6.png" alt="Cosmic Capture 6">
-                <div class="gallery-overlay"><h3>Cosmic View 6</h3></div>
+                <div class="gallery-overlay">
+                    <h3>Astronaut's Horizon</h3>
+                    <p class="gallery-desc">The awe-inspiring view of Earth's atmosphere from space.</p>
+                </div>
             </div>
             <div class="gallery-item">
                 <img src="Img/photo7.png" alt="Cosmic Capture 7">
-                <div class="gallery-overlay"><h3>Cosmic View 7</h3></div>
+                <div class="gallery-overlay">
+                    <h3>Meteor Shower</h3>
+                    <p class="gallery-desc">A brilliant display of shooting stars streaking across the night sky.</p>
+                </div>
             </div>
             <div class="gallery-item">
                 <img src="Img/photo8.png" alt="Cosmic Capture 8">
-                <div class="gallery-overlay"><h3>Cosmic View 8</h3></div>
+                <div class="gallery-overlay">
+                    <h3>Black Hole Accretion</h3>
+                    <p class="gallery-desc">Superheated matter swirling around a supermassive black hole.</p>
+                </div>
             </div>
             <div class="gallery-item">
                 <img src="Img/photo9.png" alt="Cosmic Capture 9">
-                <div class="gallery-overlay"><h3>Cosmic View 9</h3></div>
+                <div class="gallery-overlay">
+                    <h3>Vibrant Star Cluster</h3>
+                    <p class="gallery-desc">A gravitational bind holding thousands of ancient stars together.</p>
+                </div>
             </div>
             <div class="gallery-item">
                 <img src="Img/photo10.png" alt="Cosmic Capture 10">
-                <div class="gallery-overlay"><h3>Cosmic View 10</h3></div>
+                <div class="gallery-overlay">
+                    <h3>Alien Landscape</h3>
+                    <p class="gallery-desc">The rocky, cratered surface of a recently discovered moon.</p>
+                </div>
             </div>
             <div class="gallery-item">
                 <img src="Img/photo11.png" alt="Cosmic Capture 11">
-                <div class="gallery-overlay"><h3>Cosmic View 11</h3></div>
+                <div class="gallery-overlay">
+                    <h3>Solar Eclipse</h3>
+                    <p class="gallery-desc">A stunning cosmic alignment casting a shadow across a world.</p>
+                </div>
             </div>
         </div>
     </main>
@@ -116,5 +151,6 @@
             });
         });
     </script>
+<script src="wow_facts.js"></script>
 </body>
 </html>
