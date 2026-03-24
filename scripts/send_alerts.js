@@ -1,5 +1,5 @@
-// Node.js Backend Script for automated alerts (Runs via GitHub Actions)
-// This script checks for events happening tomorrow and sends an email via EmailJS API.
+const fs = require('fs');
+const path = require('path');
 
 const NASA_API_KEY = 'QGMpMKQeT2jfs7CxjRLAT4sHsN63MP0oSV2lL6jg';
 
@@ -11,76 +11,89 @@ const EMAILJS_TEMPLATE_ID = 'template_xawflaa';
 // Firebase Database URL
 const FIREBASE_DB_URL = 'https://star-533d9-default-rtdb.firebaseio.com/subscribers.json';
 
-// Cosmic Events Backup
-const cosmicEvents = [
-    {
-        id: 'eclipse-demo',
-        title_en: 'Solar Eclipse',
-        title_ar: 'كسوف الشمس',
-        date: '2025-12-28',
-        time_en: '10:00 UTC',
-        time_ar: '10:00 بتوقيت جرينتش',
-        desc_en: 'A rare solar eclipse is approaching! Witness the alignment of the Sun, Moon, and Earth.',
-        desc_ar: 'كسوف نادر للشمس يقترب! شاهد اصطفاف الشمس والقمر والأرض.',
-    },
-    {
-        id: 'lunar-eclipse-2025',
-        title_en: 'Total Lunar Eclipse',
-        title_ar: 'خسوف كلي للقمر',
-        date: '2025-09-07',
-        time_en: '18:12 UTC',
-        time_ar: '18:12 بتوقيت جرينتش',
-        desc_en: 'A stunning total lunar eclipse where the Moon will turn a deep reddish hue as it passes entirely through Earth\'s shadow.',
-        desc_ar: 'خسوف كلي مذهل للقمر حيث سيتحول القمر إلى لون أحمر داكن أثناء مروره بالكامل عبر ظل الأرض.',
-    }
-];
-
 async function checkAndSendAlerts() {
-    console.log("Starting Cosmic Alerts Check...");
+    console.log("Starting Fully Automated Cosmic Alerts Check...");
     
-    // Get tomorrow's date string (YYYY-MM-DD)
+    // Get current and tomorrow's date strings (YYYY-MM-DD)
     const now = new Date();
-    const tomorrow = new Date(now);
-    tomorrow.setDate(now.getDate() + 1);
+    const nowString = now.toISOString().split('T')[0];
+    const tomorrow = new Date(now.getTime() + (24 * 60 * 60 * 1000));
     const tomorrowString = tomorrow.toISOString().split('T')[0];
     
     let eventTomorrow = null;
 
-    // 1. Check NASA DONKI API for events tomorrow
+    // 1. Check NASA DONKI API for LIVE Space Weather Alerts (High Priority)
     try {
-        console.log("Checking NASA DONKI API...");
+        console.log("Step 1: Checking NASA DONKI for live alerts...");
         const nasaRes = await fetch(`https://api.nasa.gov/DONKI/notifications?type=all&api_key=${NASA_API_KEY}`);
         const alerts = await nasaRes.json();
         
         if (alerts && alerts.length > 0) {
             const latest = alerts[0];
-            const issueDateString = latest.messageIssueTime.split('T')[0];
-            // Simulate that the alert is for tomorrow (since NASA issues alerts roughly matching the target date)
-            if (issueDateString === tomorrowString) {
+            const issueDate = new Date(latest.messageIssueTime);
+            const LAST_24H = new Date(now.getTime() - (24 * 60 * 60 * 1000));
+
+            if (issueDate > LAST_24H) {
+                console.log(`Found a fresh NASA alert issued at: ${latest.messageIssueTime}`);
                 eventTomorrow = {
                     title_en: 'NASA Space Weather Alert',
                     title_ar: 'تنبيه ناسا للطقس الفضائي',
-                    desc_en: 'A space weather event is scheduled for tomorrow. Stay tuned!',
-                    desc_ar: 'تم رصد حدث فلكي للغد من قبل ناسا. ابق على تواصل!'
+                    desc_en: `New space weather notification from NASA (Type: ${latest.messageType || 'General Alert'}). This was recently issued and may affect cosmic conditions in the coming day.`,
+                    desc_ar: `إشعار طقس فضائي جديد من ناسا (النوع: ${latest.messageType || 'تنبيه عام'}). تم إصدار هذا التقرير مؤخراً وقد يؤثر على الظروف الكونية خلال الساعات القادمة.`
                 };
             }
         }
     } catch (e) {
-        console.warn("Could not fetch NASA API: ", e.message);
+        console.warn("NASA DONKI API failed: ", e.message);
     }
 
-    // 2. Fallback to Cosmic Events list if no NASA alert
+    // 2. Check NASA NeoWs for Asteroid Close Approaches (Medium Priority)
     if (!eventTomorrow) {
-        const found = cosmicEvents.find(e => e.date === tomorrowString);
-        if (found) eventTomorrow = found;
+        try {
+            console.log("Step 2: Checking NASA NeoWs for asteroid flybys...");
+            const neoRes = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${tomorrowString}&end_date=${tomorrowString}&api_key=${NASA_API_KEY}`);
+            const data = await neoRes.json();
+            
+            const nearEarthObjects = data.near_earth_objects[tomorrowString] || [];
+            const significantNEO = nearEarthObjects.find(neo => neo.is_potentially_hazardous_asteroid || neo.close_approach_data[0].miss_distance.lunar < 5);
+
+            if (significantNEO) {
+                console.log(`Found a significant asteroid flyby: ${significantNEO.name}`);
+                eventTomorrow = {
+                    title_en: '☄️ Asteroid Flyby Alert',
+                    title_ar: '☄️ تنبيه: اقتراب كويكب',
+                    desc_en: `Asteroid ${significantNEO.name} will make a close approach to Earth tomorrow at a distance of approx ${Math.round(significantNEO.close_approach_data[0].miss_distance.kilometers)} km. Don't worry, it's being monitored by NASA!`,
+                    desc_ar: `سيمر الكويكب ${significantNEO.name} بالقرب من الأرض غداً على مسافة حوالي ${Math.round(significantNEO.close_approach_data[0].miss_distance.kilometers)} كم. لا داعي للقلق، ناسا تراقبه عن كثب!`
+                };
+            }
+        } catch (e) {
+            console.warn("NASA NeoWs API failed: ", e.message);
+        }
+    }
+
+    // 3. Check long-term cosmic calendar (Eclipses, Conjunctions)
+    if (!eventTomorrow) {
+        try {
+            console.log("Step 3: Checking cosmic_calendar.json...");
+            const calendarPath = path.join(__dirname, 'cosmic_calendar.json');
+            if (fs.existsSync(calendarPath)) {
+                const calendar = JSON.parse(fs.readFileSync(calendarPath, 'utf8'));
+                const found = calendar.find(e => e.date === tomorrowString);
+                if (found) {
+                    eventTomorrow = found;
+                }
+            }
+        } catch (e) {
+            console.warn("Cosmic Calendar loading failed: ", e.message);
+        }
     }
 
     if (!eventTomorrow) {
-        console.log(`No cosmic events scheduled for tomorrow (${tomorrowString}). Exiting.`);
+        console.log(`No cosmic events found for tomorrow (${tomorrowString}).`);
         return;
     }
 
-    console.log(`Found event for tomorrow: ${eventTomorrow.title_en}`);
+    console.log(`Final Event to Alert: ${eventTomorrow.title_en}`);
 
     // 3. Fetch Subscribers from Firebase
     console.log("Fetching subscribers from Firebase...");

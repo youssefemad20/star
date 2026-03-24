@@ -1,0 +1,79 @@
+[
+  {
+    "date": "2026-02-17",
+    "title_en": "Annular Solar Eclipse",
+    "title_ar": "كسوف شمس حلقي",
+    "desc_en": "A 'ring of fire' solar eclipse where the Moon covers the Sun's center.",
+    "desc_ar": "كسوف 'حلقة النار' حيث يغطي القمر مركز الشمس."
+  },
+  {
+    "date": "2026-02-28",
+    "title_en": "Planet Parade",
+    "title_ar": "موكب الكواكب",
+    "desc_en": "Six planets align in the evening sky: Mercury, Venus, Jupiter, Saturn, Uranus, and Neptune.",
+    "desc_ar": "اصطفاف ستة كواكب في سماء المساء: عطارد، الزهرة، المشتري، زحل، أورانوس، ونبتون."
+  },
+  {
+    "date": "2026-03-02",
+    "title_en": "Total Lunar Eclipse",
+    "title_ar": "خسوف كلي للقمر",
+    "desc_en": "A stunning 'Blood Moon' visible across the Americas and Asia.",
+    "desc_ar": "خسوف مذهل للقمر (القمر الدموي) يرى في الأمريكتين وآسيا."
+  },
+  {
+    "date": "2026-03-07",
+    "title_en": "Venus-Saturn Conjunction",
+    "title_ar": "اقتران الزهرة وزحل",
+    "desc_en": "Venus and Saturn appear very close together in the western sky.",
+    "desc_ar": "الزهرة وزحل يظهران قريبين جداً من بعضهما في السماء الغربية."
+  },
+  {
+    "date": "2026-03-26",
+    "title_en": "Jupiter-Moon Meetup",
+    "title_ar": "لقاء المشتري والقمر",
+    "desc_en": "The Moon appears remarkably close to the bright planet Jupiter.",
+    "desc_ar": "يظهر القمر قريباً جداً من كوكب المشتري اللامع."
+  },
+  {
+    "date": "2026-08-12",
+    "title_en": "Total Solar Eclipse",
+    "title_ar": "كسوف كلي للشمس",
+    "desc_en": "A rare total eclipse visible from Spain, Iceland, and Greenland.",
+    "desc_ar": "كسوف كلي نادر للشمس يرى من إسبانيا وآيسلندا وجرينلاند."
+  },
+  {
+    "date": "2027-08-02",
+    "title_en": "Great Total Solar Eclipse (Egypt)",
+    "title_ar": "الكسوف الكلي العظيم (مصر)",
+    "desc_en": "One of the longest total eclipses of the century, passing over Luxor, Egypt.",
+    "desc_ar": "واحد من أطول الكسوفات الكلية في القرن، يمر فوق الأقصر بمصر."
+  },
+  {
+    "date": "2028-07-22",
+    "title_en": "Total Solar Eclipse (Australia)",
+    "title_ar": "كسوف كلي للشمس (أستراليا)",
+    "desc_en": "A total solar eclipse visible over Australia and New Zealand.",
+    "desc_ar": "كسوف كلي للشمس يرى فوق أستراليا ونيوزيلندا."
+  },
+  {
+    "date": "2028-12-31",
+    "title_en": "New Year's Blood Moon",
+    "title_ar": "خسوف رأس السنة الدموي",
+    "desc_en": "A total lunar eclipse on New Year's Eve.",
+    "desc_ar": "خسوف كلي للقمر في ليلة رأس السنة."
+  },
+  {
+    "date": "2029-06-25",
+    "title_en": "Total Lunar Eclipse",
+    "title_ar": "خسوف كلي للقمر",
+    "desc_en": "A major lunar eclipse visible from Europe, Africa, and the Americas.",
+    "desc_ar": "خسوف كبير للقمر يرى من أوروبا وأفريقيا والأمريكتين."
+  },
+  {
+    "date": "2040-09-08",
+    "title_en": "Great Planetary Alignment",
+    "title_ar": "الاصطفاف الكوكبي العظيم",
+    "desc_en": "Five naked-eye planets (Mercury, Venus, Mars, Jupiter, Saturn) align with the Moon.",
+    "desc_ar": "اصطفاف خمسة كواكب مرئية (عطارد، الزهرة، المريخ، المشتري، زحل) مع القمر."
+  }
+]

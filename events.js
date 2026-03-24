@@ -1,5 +1,4 @@
 // Cosmic Events and Subscription System
-
 const NASA_API_KEY = 'QGMpMKQeT2jfs7CxjRLAT4sHsN63MP0oSV2lL6jg';
 
 // --- EmailJS Configuration ---
@@ -10,37 +9,13 @@ const EMAILJS_TEMPLATE_ID = 'template_xawflaa';
 if (typeof emailjs !== 'undefined') {
     emailjs.init(EMAILJS_PUBLIC_KEY);
 }
+
 // -----------------------------
 
-// Sample Events Data (fallback and specific events)
-const cosmicEvents = [
-    {
-        id: 'eclipse-demo',
-        title_en: 'Solar Eclipse',
-        title_ar: 'كسوف الشمس',
-        date: '2025-12-28',
-        time_en: '10:00 UTC',
-        time_ar: '10:00 بتوقيت جرينتش',
-        desc_en: 'A rare solar eclipse is approaching! Witness the alignment of the Sun, Moon, and Earth.',
-        desc_ar: 'كسوف نادر للشمس يقترب! شاهد اصطفاف الشمس والقمر والأرض.',
-        scientific_en: 'A solar eclipse occurs when the Moon passes between Earth and the Sun, thereby obscuring the view of the Sun from a small part of Earth, totally or partially.',
-        scientific_ar: 'يحدث كسوف الشمس عندما يمر القمر بين الأرض والشمس، مما يحجب رؤية الشمس عن جزء صغير من الأرض، كلياً أو جزئياً.'
-    },
-    {
-        id: 'lunar-eclipse-2025',
-        title_en: 'Total Lunar Eclipse',
-        title_ar: 'خسوف كلي للقمر',
-        date: '2025-09-07',
-        time_en: '18:12 UTC',
-        time_ar: '18:12 بتوقيت جرينتش',
-        desc_en: 'A stunning total lunar eclipse where the Moon will turn a deep reddish hue as it passes entirely through Earth\'s shadow.',
-        desc_ar: 'خسوف كلي مذهل للقمر حيث سيتحول القمر إلى لون أحمر داكن أثناء مروره بالكامل عبر ظل الأرض.',
-        scientific_en: 'A total lunar eclipse happens when the Moon and Sun are on opposite sides of Earth. Earth blocks the sunlight that normally reaches the Moon. Instead of that light hitting the Moon’s surface, Earth’s shadow falls on it.',
-        scientific_ar: 'يحدث خسوف القمر الكلي عندما يكون القمر والشمس على جانبين متقابلين من الأرض. تحجب الأرض ضوء الشمس الذي يصل عادة إلى القمر. وبدلاً من أن يصطدم هذا الضوء بسطح القمر، يسقط ظل الأرض عليه.'
-    }
-];
+let cosmicEvents = []; // Loaded dynamically from scripts/cosmic_calendar.json
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadCosmicCalendar();
     initEvents();
     initSubscription();
     // Load events.css manually since it's a new file
@@ -49,6 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
     link.href = 'events.css';
     document.head.appendChild(link);
 });
+
+async function loadCosmicCalendar() {
+    try {
+        const response = await fetch('scripts/cosmic_calendar.json');
+        cosmicEvents = await response.json();
+    } catch (e) {
+        console.warn("Failed to load cosmic calendar JSON, using empty fallback.", e);
+        cosmicEvents = [];
+    }
+}
 
 // --- Human-Friendly NASA Alert Translations ---
 // Maps DONKI messageType codes to clear titles and explanations
